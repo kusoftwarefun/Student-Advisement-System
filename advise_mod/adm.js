@@ -40,9 +40,9 @@ Do grad courses have different grade requirements? No C's etc?
 Should I assume specific semester courses, or base more off of courses offered?
 Should I ask to see new IT major check sheet?
 
-For elective course requirements:
+(For IT Maintainence) Elective course requirements:
 *Provide unique code for each elective needed (generated automatically)
-::Ex::
+::Example of Required input::
 "Courses":
 {
     "CSC125", "CSC126", "CSC127",
