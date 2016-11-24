@@ -1,0 +1,4 @@
+GANTT & PERT V2.1 
+--------------------------
+- Yellow highlight - Task completed
+- Blue highlight - Task in progress 
