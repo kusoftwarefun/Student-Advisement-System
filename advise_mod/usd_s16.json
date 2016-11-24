@@ -1,62 +1,58 @@
-{"uit":
+{"usd":
   {
 		"required": ["MAT181", "MAT260", "PHI040", "CSC125", "CSC135", "CSC136", "CSC225","CSC235", "CSC237", "CSC310", "CSC328", "CSC343", "CSC354", "CSC355"], 
 		"either":
-		[
-			{
-				 "choice1":  ["MAT140", "MAT310"],
-				 "choice2":  ["MAT140", "MAT310"]
-			}
-		],
+		{
+			"choice1":  ["MAT140", "MAT310"],	
+			"choice2":  ["ex1", "ex2"]
+		},
 		"electives":
-		[
+		{
+			"CSCxx1":
 			{
-				 "CSCxx1":
-				{
         		"higherThan": "CSC200",
         		"not": []
    	 		},
-				"CSCxx2":
-				{
+			"CSCxx2":
+			{
         		"higherThan": "CSC200",
         		"not": []
    	 		},
-				"CSCxx3":
-				{
+			"CSCxx3":
+			{
         		"higherThan": "CSC300",
         		"not": [] 
    	 		},
-				"CSCxx4":
-				{
+			"CSCxx4":
+			{
         		"higherThan": "CSC300",
         		"not": [] 
    	 		},
-				"CSCxx5":
-				{
+			"CSCxx5":
+			{
         		"higherThan": "CSC300",
         		"not": [] 
    	 		},
-				"CSCxx6":
-				{
+			"CSCxx6":
+			{
         		"higherThan": "CSC300",
         		"not": [] 
    	 		},
-				"CSCxx7":
-				{
+			"CSCxx7":
+			{
         		"higherThan": "CSC300",
         		"not": [] 
    	 		},
-				"CSCxx8":
-				{
+			"CSCxx8":
+			{
         		"higherThan": "CSC300",
         		"not": [] 
    	 		},
-				"MATxx1":
-				{
+			"MATxx1":
+			{
         		"higherThan": "MAT181",
       			"not": ["MAT224"] 
    	 		}
-			}
-		]
+		}
 	}
 }
