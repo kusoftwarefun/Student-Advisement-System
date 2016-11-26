@@ -41,7 +41,7 @@ function uploadFile(file){
             console.log(xhr.responseText); // handle response.                                                                                                            
         }
                 else
-                        console.log("error")
+                        console.log("ERROR: " + xhr.responseText);
     };
     fd.append("upload_file", file);
     xhr.send(fd);
