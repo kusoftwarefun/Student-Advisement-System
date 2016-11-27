@@ -48,7 +48,6 @@ var gened = require('./gened_f11.json');    // gen ed requirements
 var usd = require('./usd_s16.json');        // uit courses required
 var offer = require('./offered.json');      // being offered this semester
 
-
 // figure out major reqs taken and remaining
 var completed = [];
 var remaining = [];
@@ -194,6 +193,44 @@ for (var i = 0; i < matSatisfied.length; i++)
         matDone.push(matSatisfied[i])
 }
 
+// calculate cs credits and major gpa
+var classes = 0;
+var creditPoints = 0;
+var gpa = 0;
+
+    for (var j = 0; j < courses.courses.length; j++)
+    {
+        if (courses.courses[j].code.substring(courses.courses[j].code.length-6, courses.courses[j].code.length-3) == "CSC" && courses.courses[j].code.substring(courses.courses[j].code.length-3, courses.courses[j].code.length) >= 125)
+        {
+            if (courses.courses[j].grade == "A")
+                creditPoints += 4;
+            else if (courses.courses[j].grade == "A-")
+                creditPoints += 3.7;
+            else if (courses.courses[j].grade == "B+")
+                creditPoints += 3.3;
+            else if (courses.courses[j].grade == "B")
+                creditPoints += 3;
+            else if (courses.courses[j].grade == "B-")
+                creditPoints += 2.7;
+            else if (courses.courses[j].grade == "C+")
+                creditPoints += 2.3;
+            else if (courses.courses[j].grade == "C")
+                creditPoints += 2;
+            else if (courses.courses[j].grade == "D")
+                creditPoints += 1;
+            else if (courses.courses[j].grade == "F")
+                creditPoints += 0;
+            else if (courses.courses[j].grade == "pending")
+                continue;
+
+            classes++;
+        }
+    }
+gpa = creditPoints/classes;
+
+
+
+
 
 // print results
 console.log("\nCompleted major requirements: ")
@@ -224,6 +261,8 @@ for (var i = 0; i < matRem.length; i++)
 {
    console.log(matRem[i]);
 }
+console.log("\nOverall GPA in CSIT courses: " + gpa.toFixed(2));
+
 
 ///////////////////////////////////////////////////////
 /* EXTRACT TEXT FROM PDF
@@ -465,4 +504,42 @@ console.log(csRem);
 console.log(csDone);
 console.log(matRem);
 console.log(matDone);
+*/
+
+////////////////////////////////////////////////
+/*// CALCULATE CS MAJOR CREDITS AND GPA
+var classes = 0;
+var creditPoints = 0;
+var gpa = 0;
+
+    for (var j = 0; j < courses.courses.length; j++)
+    {
+        if (courses.courses[j].code.substring(courses.courses[j].code.length-6, courses.courses[j].code.length-3) == "CSC" && courses.courses[j].code.substring(courses.courses[j].code.length-3, courses.courses[j].code.length) >= 125)
+        {
+            if (courses.courses[j].grade == "A")
+                creditPoints += 4;
+            else if (courses.courses[j].grade == "A-")
+                creditPoints += 3.7;
+            else if (courses.courses[j].grade == "B+")
+                creditPoints += 3.3;
+            else if (courses.courses[j].grade == "B")
+                creditPoints += 3;
+            else if (courses.courses[j].grade == "B-")
+                creditPoints += 2.7;
+            else if (courses.courses[j].grade == "C+")
+                creditPoints += 2.3;
+            else if (courses.courses[j].grade == "C")
+                creditPoints += 2;
+            else if (courses.courses[j].grade == "D")
+                creditPoints += 1;
+            else if (courses.courses[j].grade == "F")
+                creditPoints += 0;
+            else if (courses.courses[j].grade == "pending")
+                continue;
+
+            classes++;
+        }
+    }
+gpa = creditPoints/classes;
+console.log("\nOverall GPA in CSIT courses: " + gpa.toFixed(2));
 */
