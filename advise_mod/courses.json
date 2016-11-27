@@ -35,7 +35,7 @@
 		"code": "CSC125", 
 		"name": "Discrete Math 1", 
 		"semester": "spring15",
-		"grade": "D",
+		"grade": "F",
         "credits": 3,
         "competency": "CT"
 	},
@@ -51,7 +51,7 @@
         "code": "CSC242",
         "name": "Web Programming",
         "semester": "spring15",
-        "grade": "B+",
+        "grade": "D",
         "credits": 3,
         "comptency": "null"
     },

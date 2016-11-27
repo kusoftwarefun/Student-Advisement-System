@@ -53,6 +53,7 @@ var offer = require('./offered.json');      // being offered this semester
 var completed = [];
 var remaining = [];
 var warnings = [];
+var fails = [];
 
 for(var i = 0; i < usd.usd.required.length; i++)
 {
@@ -64,8 +65,14 @@ for(var i = 0; i < usd.usd.required.length; i++)
            completed.push(usd.usd.required[i]);
            check = true;
          }
-         else if (usd.usd.required[i] == courses.courses[j].code && (courses.courses[j].grade.substring(0,1)  == 'D' || courses.courses[j].grade.substring(0,1)  == 'F'))
+         else if (usd.usd.required[i] == courses.courses[j].code && courses.courses[j].grade.substring(0,1)  == 'D')
+         {
+            completed.push(usd.usd.required[i]);
+            check = true;
             warnings.push(courses.courses[j]);
+         }
+         else if (usd.usd.required[i] == courses.courses[j].code && courses.courses[j].grade.substring(0,1)  == 'F')
+            fails.push(courses.courses[j]);
 
    }
    if (check == false)
@@ -91,6 +98,20 @@ for (var i = 0; i < courses.courses.length; i++)
         csElects.push(courses.courses[i].code);
     else if (!check && courses.courses[i].code.substring(li-6, li-3) == "MAT" && (courses.courses[i].grade.substring(0,1)  == 'C' || courses.courses[i].grade.substring(0,1)  == 'B'|| courses.courses[i].grade.substring(0,1) == "A") )
         matElects.push(courses.courses[i].code);
+    else if (!check && courses.courses[i].code.substring(li-6, li-3) == "CSC" && (courses.courses[i].grade.substring(0,1)  == 'D'))
+        {
+            csElects.push(courses.courses[i].code);
+            warnings.push(courses.courses[i]);
+        }
+    else if (!check && courses.courses[i].code.substring(li-6, li-3) == "MAT" && (courses.courses[i].grade.substring(0,1) == 'D' ))      
+       {
+           matElects.push(courses.courses[i].code);
+           warnings.push(courses.courses[i]);
+       }
+    else if (!check && courses.courses[i].code.substring(li-6, li-3) == "CSC" && (courses.courses[i].grade.substring(0,1)  == 'F'))
+            fails.push(courses.courses[i]);
+    else if (!check && courses.courses[i].code.substring(li-6, li-3) == "MAT" && (courses.courses[i].grade.substring(0,1) == 'F' ))
+           fails.push(courses.courses[i]);
 }
 csElects = csElects.sort();
 matEelects = matElects.sort();
@@ -271,6 +292,11 @@ for (var i = 0; i < warnings.length; i++)
 {
     console.log(warnings[i]);
 }
+console.log("\nFailed Courses:");
+for (var i = 0; i < fails.length; i++)
+{
+    console.log(fails[i]);
+}
 console.log("\nOverall major GPA: " + gpa.toFixed(2));
 
 
@@ -350,10 +376,11 @@ for(var i = 0; i < offer.offered.length; i++)
 
 ///////////////////////////////////////////////////
 /*// MAJOR COURSES TAKEN AND REMAINING
-//// LOW GRADE WARNINGS COMPUTED
+//// LOW GRADE WARNING COURSES
 var completed = [];
 var remaining = [];
 var warnings = [];
+var fails = [];
 
 for(var i = 0; i < usd.usd.required.length; i++)
 {
@@ -365,8 +392,14 @@ for(var i = 0; i < usd.usd.required.length; i++)
            completed.push(usd.usd.required[i]);
            check = true;
          }
-         else if (usd.usd.required[i] == courses.courses[j].code && (courses.courses[j].grade.substring(0,1)  == 'D' || courses.courses[j].grade.substring(0,1)  == 'F'))
+         else if (usd.usd.required[i] == courses.courses[j].code && courses.courses[j].grade.substring(0,1)  == 'D')
+         {
+            completed.push(usd.usd.required[i]);
+            check = true;
             warnings.push(courses.courses[j]);
+         }
+         else if (usd.usd.required[i] == courses.courses[j].code && courses.courses[j].grade.substring(0,1)  == 'F')
+            fails.push(courses.courses[j]);
 
    }
    if (check == false)
@@ -377,26 +410,40 @@ for(var i = 0; i < usd.usd.required.length; i++)
 
 ////////////////////////////////////////////////////////
 /*// MAJOR ELECTIVES TAKEN AND REMAINING
+///// LOW GRADE WARNING COURSES
 
-// figure out possible electives
 var csElects = [];
 var matElects = [];
 
 for (var i = 0; i < courses.courses.length; i++)
 {
     var check = false;
+    var li = courses.courses[i].code.length;
+    
     for (var j = 0; j < usd.usd.required.length; j++)
     {
         if (courses.courses[i].code == usd.usd.required[j])
-        {
             check = true;
-        }
     }
-    var li = courses.courses[i].code.length;
+    
     if (!check && courses.courses[i].code.substring(li-6, li-3) == "CSC" && (courses.courses[i].grade.substring(0,1)  == 'C' || courses.courses[i].grade.substring(0,1)  == 'B'|| courses.courses[i].grade.substring(0,1) == "A") )
         csElects.push(courses.courses[i].code);
     else if (!check && courses.courses[i].code.substring(li-6, li-3) == "MAT" && (courses.courses[i].grade.substring(0,1)  == 'C' || courses.courses[i].grade.substring(0,1)  == 'B'|| courses.courses[i].grade.substring(0,1) == "A") )
         matElects.push(courses.courses[i].code);
+    else if (!check && courses.courses[i].code.substring(li-6, li-3) == "CSC" && (courses.courses[i].grade.substring(0,1)  == 'D'))
+        {
+            csElects.push(courses.courses[i].code);
+            warnings.push(courses.courses[i]);
+        }
+    else if (!check && courses.courses[i].code.substring(li-6, li-3) == "MAT" && (courses.courses[i].grade.substring(0,1) == 'D' ))      
+       {
+           matElects.push(courses.courses[i].code);
+           warnings.push(courses.courses[i]);
+       }
+    else if (!check && courses.courses[i].code.substring(li-6, li-3) == "CSC" && (courses.courses[i].grade.substring(0,1)  == 'F'))
+            fails.push(courses.courses[i]);
+    else if (!check && courses.courses[i].code.substring(li-6, li-3) == "MAT" && (courses.courses[i].grade.substring(0,1) == 'F' ))
+           fails.push(courses.courses[i]);
 }
 
 csElects = csElects.sort();
