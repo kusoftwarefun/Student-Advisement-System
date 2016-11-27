@@ -49,8 +49,10 @@ var usd = require('./usd_s16.json');        // uit courses required
 var offer = require('./offered.json');      // being offered this semester
 
 // figure out major reqs taken and remaining
+// compute warnings
 var completed = [];
 var remaining = [];
+var warnings = [];
 
 for(var i = 0; i < usd.usd.required.length; i++)
 {
@@ -62,6 +64,9 @@ for(var i = 0; i < usd.usd.required.length; i++)
            completed.push(usd.usd.required[i]);
            check = true;
          }
+         else if (usd.usd.required[i] == courses.courses[j].code && (courses.courses[j].grade.substring(0,1)  == 'D' || courses.courses[j].grade.substring(0,1)  == 'F'))
+            warnings.push(courses.courses[j]);
+
    }
    if (check == false)
        remaining.push(usd.usd.required[i]);
@@ -261,6 +266,11 @@ for (var i = 0; i < matRem.length; i++)
 {
    console.log(matRem[i]);
 }
+console.log("\nWarnings:");
+for (var i = 0; i < warnings.length; i++)
+{
+    console.log(warnings[i]);
+}
 console.log("\nOverall major GPA: " + gpa.toFixed(2));
 
 
@@ -340,8 +350,10 @@ for(var i = 0; i < offer.offered.length; i++)
 
 ///////////////////////////////////////////////////
 /*// MAJOR COURSES TAKEN AND REMAINING
+//// LOW GRADE WARNINGS COMPUTED
 var completed = [];
 var remaining = [];
+var warnings = [];
 
 for(var i = 0; i < usd.usd.required.length; i++)
 {
@@ -353,6 +365,9 @@ for(var i = 0; i < usd.usd.required.length; i++)
            completed.push(usd.usd.required[i]);
            check = true;
          }
+         else if (usd.usd.required[i] == courses.courses[j].code && (courses.courses[j].grade.substring(0,1)  == 'D' || courses.courses[j].grade.substring(0,1)  == 'F'))
+            warnings.push(courses.courses[j]);
+
    }
    if (check == false)
        remaining.push(usd.usd.required[i]);
