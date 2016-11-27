@@ -41,6 +41,191 @@ Should I assume specific semester courses, or base more off of courses offered?
 Should I ask to see new IT major check sheet?
 */
 
+// read in test data
+var deps = require('./CSITcatalog.json');  // cs course prereqs
+var stud = require('./student.json');       // student data
+var courses = require('./courses.json');    // courses taken
+var gened = require('./gened_f11.json');    // gen ed requirements
+var usd = require('./usd_s16.json');        // uit courses required
+var offer = require('./offered.json');      // being offered this semester
+
+
+// figure out major reqs taken and remaining
+var completed = [];
+var remaining = [];
+
+for(var i = 0; i < usd.usd.required.length; i++)
+{
+   var check = false;
+   for(var j = 0; j < courses.courses.length; j++) 
+   {
+         if(usd.usd.required[i] == courses.courses[j].code)
+         {
+           completed.push(usd.usd.required[i]);
+           check = true;
+         }
+   }
+   if (check == false)
+       remaining.push(usd.usd.required[i]);
+}
+
+// figure out possible electives
+var csElects = [];
+var matElects = [];
+
+for (var i = 0; i < courses.courses.length; i++)
+{
+    var check = false;
+    var li = courses.courses[i].code.length;
+    
+    for (var j = 0; j < usd.usd.required.length; j++)
+    {
+        if (courses.courses[i].code == usd.usd.required[j])
+            check = true;
+    }
+    
+    if (!check && courses.courses[i].code.substring(li-6, li-3) == "CSC")
+        csElects.push(courses.courses[i].code);
+    else if (!check && courses.courses[i].code.substring(li-6, li-3) == "MAT")
+        matElects.push(courses.courses[i].code);
+}
+csElects = csElects.sort();
+matEelects = matElects.sort();
+
+// grab the elective requirements from the track sheets
+var csReqs = [];
+var csNots = [];
+var matReqs = [];
+var matNots = [];
+var csObj = [];
+var matObj = [];
+
+for (var i  = 0; i < usd.usd.electives.length; i++)
+{
+    var li = usd.usd.electives[i].higherThan.length;
+    if (usd.usd.electives[i].higherThan.substr(li-6, li-3) == "CSC")
+    {
+        csReqs.push(usd.usd.electives[i].higherThan);
+        csNots.push(usd.usd.electives[i].not);
+        csObj.push(usd.usd.electives[i]);
+    }
+    else if (usd.usd.electives[i].higherThan.substr(li-6, li-3) == "MAT")
+    {
+        matReqs.push(usd.usd.electives[i].higherThan);
+        matNots.push(usd.usd.electives[i].not);
+        matObj.push(usd.usd.electives[i]);
+    }
+}
+
+// figure out passing cases
+var csSatisfied = [];
+var matSatisfied = [];
+
+for (var i = 0; i < csReqs.length; i++)
+    csSatisfied.push("CSC000");
+
+for (var i = 0; i < matReqs.length; i++)
+    matSatisfied.push("MAT000");
+
+for (var i = 0; i < csReqs.length; i++)
+{
+    for (var j = 0; j < csElects.length; j++)
+    {
+        if (csElects[j] == "CSC000")
+            continue;
+
+        if (parseInt(csReqs[i].substring(csReqs.length-3, csReqs.length)) < parseInt(csElects[j].substring(csReqs.length-3, csReqs.length)))
+        {
+            csSatisfied[i] = csElects[j];
+            csElects[j] = "CSC000";
+        }
+    }
+}
+for (var i = 0; i < matReqs.length; i++)
+{
+    for (var j = 0; j < matElects.length; j++)
+    {
+        if (matElects[j] == "MAT000")
+            continue;
+
+        if (parseInt(matReqs[i].substring(matReqs.length-3, matReqs.length)) < parseInt(matElects[j].substring(matReqs.length-3, matReqs.length)))
+        {
+            matSatisfied[i] = matElects[j];
+            matElects[j] = "MAT000";
+        }
+    }
+}
+
+// remove NOT cases
+for (var i = 0; i < csSatisfied.length; i++)
+{
+    for (var j = 0; j < csNots.length; j++)
+    {
+        if (csSatisfied[i] == csNots[i][j])
+            csSatisfied[i] == "CSC000";
+    }
+}
+
+for (var i = 0; i < matSatisfied.length; i++)
+{
+    for (var j = 0; j < matNots.length; j++)
+    {
+        if (matSatisfied[i] == matNots[i][j])
+            matSatisfied[i] == "MAT000";
+    }
+}
+
+// figure out remaining
+var csRem = [];
+var csDone = [];
+var matRem = [];
+var matDone = [];
+for (var i = 0; i < csSatisfied.length; i++)
+{
+    if(csSatisfied[i] == "CSC000")
+        csRem.push(csObj[i]);
+    else
+        csDone.push(csSatisfied[i])
+}
+for (var i = 0; i < matSatisfied.length; i++)
+{
+    if(matSatisfied[i] == "MAT000")
+        matRem.push(matObj[i]);
+    else
+        matDone.push(matSatisfied[i])
+}
+
+
+// print results
+console.log("\nCompleted major requirements: ")
+for (var i = 0; i < completed.length; i++)
+{
+   console.log(completed[i]);
+}
+console.log("\nCompleted major electives: ")
+for (var i = 0; i < csDone.length; i++)
+{
+   console.log(csDone[i]);
+}
+for (var i = 0; i < matDone.length; i++)
+{
+   console.log(matDone[i]);
+}
+console.log("\nRemaining major requirements: ")
+for (var i = 0; i < remaining.length; i++)
+{
+   console.log(remaining[i]);
+}
+console.log("\nRemaining major electives: ")
+for (var i = 0; i < csRem.length; i++)
+{
+   console.log(csRem[i]);
+}
+for (var i = 0; i < matRem.length; i++)
+{
+   console.log(matRem[i]);
+}
+
 ///////////////////////////////////////////////////////
 /* EXTRACT TEXT FROM PDF
 var fs = require('fs');
@@ -302,193 +487,3 @@ console.log(csDone);
 console.log(matRem);
 console.log(matDone);
 */
-
-// read in test data
-var deps = require('./CSITcatalog.json');  // cs course prereqs
-var stud = require('./student.json');       // student data
-var courses = require('./courses.json');    // courses taken
-var gened = require('./gened_f11.json');    // gen ed requirements
-var usd = require('./usd_s16.json');        // uit courses required
-var offer = require('./offered.json');      // being offered this semester
-
-
-// figure out major reqs taken and remaining
-var completed = [];
-var remaining = [];
-
-for(var i = 0; i < usd.usd.required.length; i++)
-{
-   var check = false;
-   for(var j = 0; j < courses.courses.length; j++) 
-   {
-         if(usd.usd.required[i] == courses.courses[j].code)
-         {
-           completed.push(usd.usd.required[i]);
-           check = true;
-         }
-   }
-   if (check == false)
-   {
-       remaining.push(usd.usd.required[i]);
-   } 
-}
-
-// figure out possible electives
-var csElects = [];
-var matElects = [];
-
-for (var i = 0; i < courses.courses.length; i++)
-{
-    var check = false;
-    for (var j = 0; j < usd.usd.required.length; j++)
-    {
-        if (courses.courses[i].code == usd.usd.required[j])
-        {
-            check = true;
-        }
-    }
-    var li = courses.courses[i].code.length;
-    if (!check && courses.courses[i].code.substring(li-6, li-3) == "CSC")
-    {
-        csElects.push(courses.courses[i].code);
-    }
-    else if (!check && courses.courses[i].code.substring(li-6, li-3) == "MAT")
-    {
-        matElects.push(courses.courses[i].code);
-    }
-}
-
-csElects = csElects.sort();
-matEelects = matElects.sort();
-
-// grab the elective requirements from the track sheets
-var csReqs = [];
-var csNots = [];
-var matReqs = [];
-var matNots = [];
-var csObj = [];
-var matObj = [];
-
-for (var i  = 0; i < usd.usd.electives.length; i++)
-{
-    var li = usd.usd.electives[i].higherThan.length;
-    if (usd.usd.electives[i].higherThan.substr(li-6, li-3) == "CSC")
-    {
-        csReqs.push(usd.usd.electives[i].higherThan);
-        csNots.push(usd.usd.electives[i].not);
-        csObj.push(usd.usd.electives[i]);
-    }
-    else if (usd.usd.electives[i].higherThan.substr(li-6, li-3) == "MAT")
-    {
-        matReqs.push(usd.usd.electives[i].higherThan);
-        matNots.push(usd.usd.electives[i].not);
-        matObj.push(usd.usd.electives[i]);
-    }
-}
-
-// figure out passing cases
-var csSatisfied = [];
-var matSatisfied = [];
-
-for (var i = 0; i < csReqs.length; i++)
-    csSatisfied.push("CSC000");
-
-for (var i = 0; i < matReqs.length; i++)
-    matSatisfied.push("MAT000");
-
-for (var i = 0; i < csReqs.length; i++)
-{
-    for (var j = 0; j < csElects.length; j++)
-    {
-        if (csElects[j] == "CSC000")
-            continue;
-        if (parseInt(csReqs[i].substring(csReqs.length-3, csReqs.length)) < parseInt(csElects[j].substring(csReqs.length-3, csReqs.length)))
-        {
-            csSatisfied[i] = csElects[j];
-            csElects[j] = "CSC000";
-        }
-    }
-}
-for (var i = 0; i < matReqs.length; i++)
-{
-    for (var j = 0; j < matElects.length; j++)
-    {
-        if (matElects[j] == "MAT000")
-            continue;
-        if (parseInt(matReqs[i].substring(matReqs.length-3, matReqs.length)) < parseInt(matElects[j].substring(matReqs.length-3, matReqs.length)))
-        {
-            matSatisfied[i] = matElects[j];
-            matElects[j] = "MAT000";
-        }
-    }
-}
-
-// remove NOT cases
-for (var i = 0; i < csSatisfied.length; i++)
-{
-    for (var j = 0; j < csNots.length; j++)
-    {
-        if (csSatisfied[i] == csNots[i][j])
-            csSatisfied[i] == "CSC000";
-    }
-}
-
-for (var i = 0; i < matSatisfied.length; i++)
-{
-    for (var j = 0; j < matNots.length; j++)
-    {
-        if (matSatisfied[i] == matNots[i][j])
-            matSatisfied[i] == "MAT000";
-    }
-}
-
-// figure out remaining
-var csRem = [];
-var csDone = [];
-var matRem = [];
-var matDone = [];
-for (var i = 0; i < csSatisfied.length; i++)
-{
-    if(csSatisfied[i] == "CSC000")
-        csRem.push(csObj[i]);
-    else
-        csDone.push(csSatisfied[i])
-}
-for (var i = 0; i < matSatisfied.length; i++)
-{
-    if(matSatisfied[i] == "MAT000")
-        matRem.push(matObj[i]);
-    else
-        matDone.push(matSatisfied[i])
-}
-
-
-// print results
-console.log("\nCompleted major requirements: ")
-for (var i = 0; i < completed.length; i++)
-{
-   console.log(completed[i]);
-}
-console.log("\nCompleted major electives: ")
-for (var i = 0; i < csDone.length; i++)
-{
-   console.log(csDone[i]);
-}
-for (var i = 0; i < matDone.length; i++)
-{
-   console.log(matDone[i]);
-}
-console.log("\nRemaining major requirements: ")
-for (var i = 0; i < remaining.length; i++)
-{
-   console.log(remaining[i]);
-}
-console.log("\nRemaining major electives: ")
-for (var i = 0; i < csRem.length; i++)
-{
-   console.log(csRem[i]);
-}
-for (var i = 0; i < matRem.length; i++)
-{
-   console.log(matRem[i]);
-}
