@@ -261,7 +261,7 @@ for (var i = 0; i < matRem.length; i++)
 {
    console.log(matRem[i]);
 }
-console.log("\nOverall GPA in CSIT courses: " + gpa.toFixed(2));
+console.log("\nOverall major GPA: " + gpa.toFixed(2));
 
 
 ///////////////////////////////////////////////////////
@@ -541,5 +541,6 @@ var gpa = 0;
         }
     }
 gpa = creditPoints/classes;
-console.log("\nOverall GPA in CSIT courses: " + gpa.toFixed(2));
+
+console.log("\nOverall major GPA: " + gpa.toFixed(2));
 */
