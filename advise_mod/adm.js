@@ -1,5 +1,4 @@
 /* 
-
 Algorithm Rules:
 All 300 level courses require CS GPA of >=2.25 
 All 400 level courses have prereqs exempt for GRAD students	
@@ -59,7 +58,7 @@ for(var i = 0; i < usd.usd.required.length; i++)
    var check = false;
    for(var j = 0; j < courses.courses.length; j++) 
    {
-         if(usd.usd.required[i] == courses.courses[j].code)
+         if(usd.usd.required[i] == courses.courses[j].code && (courses.courses[j].grade.substring(0,1)  == 'C' || courses.courses[j].grade.substring(0,1)  == 'B'|| courses.courses[j].grade.substring(0,1) == "A") )
          {
            completed.push(usd.usd.required[i]);
            check = true;
@@ -305,35 +304,19 @@ for(var i = 0; i < offer.offered.length; i++)
 var completed = [];
 var remaining = [];
 
-console.log("Required courses: ");
 for(var i = 0; i < usd.usd.required.length; i++)
 {
    var check = false;
-   console.log(usd.usd.required[i]);
    for(var j = 0; j < courses.courses.length; j++) 
    {
-         if(usd.usd.required[i] == courses.courses[j].code)
+         if(usd.usd.required[i] == courses.courses[j].code && (courses.courses[j].grade.substring(0,1)  == 'C' || courses.courses[j].grade.substring(0,1)  == 'B'|| courses.courses[j].grade.substring(0,1) == "A") )
          {
            completed.push(usd.usd.required[i]);
            check = true;
          }
    }
    if (check == false)
-   {
        remaining.push(usd.usd.required[i]);
-   } 
-}
-console.log("\n");
-console.log("Completed major requirements: ")
-for (var i = 0; i < completed.length; i++)
-{
-   console.log(completed[i]);
-}
-console.log("\n");
-console.log("Remaining major requirements: ")
-for (var i = 0; i < remaining.length; i++)
-{
-   console.log(remaining[i]);
 }
 */
 
