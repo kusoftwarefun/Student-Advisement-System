@@ -227,42 +227,50 @@ var gpa = 0;
 
     for (var j = 0; j < courses.courses.length; j++)
     {
-        if (courses.courses[j].code.substring(courses.courses[j].code.length-6, courses.courses[j].code.length-3) == "CSC" && courses.courses[j].code.substring(courses.courses[j].code.length-3, courses.courses[j].code.length) >= 125)
+        //courses.courses[j].code.substring(courses.courses[j].code.length-3, courses.courses[j].code.length) >= 125
+        if (courses.courses[j].code.substring(courses.courses[j].code.length-6, courses.courses[j].code.length-3) == "CSC")
         {
             if (courses.courses[j].grade == "A")
             {
                 creditPoints += 4;
-                credits += courses.courses[j].credits;
+                if (courses.courses[j].code.substring(courses.courses[j].code.length-3, courses.courses[j].code.length) >= 125)
+                    credits += courses.courses[j].credits;
             }
             else if (courses.courses[j].grade == "A-")
             {
                 creditPoints += 3.7;
-                credits += courses.courses[j].credits;
+                if (courses.courses[j].code.substring(courses.courses[j].code.length-3, courses.courses[j].code.length) >= 125)
+                    credits += courses.courses[j].credits;
             }
             else if (courses.courses[j].grade == "B+")
             {
                 creditPoints += 3.3;
-                credits += courses.courses[j].credits;
+                if (courses.courses[j].code.substring(courses.courses[j].code.length-3, courses.courses[j].code.length) >= 125)
+                    credits += courses.courses[j].credits;
             }
             else if (courses.courses[j].grade == "B")
             {
                 creditPoints += 3;
-                credits += courses.courses[j].credits;
+                if (courses.courses[j].code.substring(courses.courses[j].code.length-3, courses.courses[j].code.length) >= 125)
+                    credits += courses.courses[j].credits;
             }                      
             else if (courses.courses[j].grade == "B-")
             {
                 creditPoints += 2.7;
-                credits += courses.courses[j].credits;
+                if (courses.courses[j].code.substring(courses.courses[j].code.length-3, courses.courses[j].code.length) >= 125)
+                    credits += courses.courses[j].credits;
             }            
             else if (courses.courses[j].grade == "C+")
             {
                 creditPoints += 2.3;
-                credits += courses.courses[j].credits;
+                if (courses.courses[j].code.substring(courses.courses[j].code.length-3, courses.courses[j].code.length) >= 125)
+                    credits += courses.courses[j].credits;
             }
             else if (courses.courses[j].grade == "C")
             {
                 creditPoints += 2;
-                credits += courses.courses[j].credits;
+                if (courses.courses[j].code.substring(courses.courses[j].code.length-3, courses.courses[j].code.length) >= 125)
+                    credits += courses.courses[j].credits;
             }
             else if (courses.courses[j].grade == "D")
                 creditPoints += 1;
@@ -305,6 +313,7 @@ for (var i = 0; i < remaining.length; i++)
             var orCheck = false;
             var andCheck = true;
             var credCheck = false;
+            var gpaCheck = true;
             // do OR check
             for (var k = 0; k < deps[j].orCourses.length; k++)
             {
@@ -321,35 +330,34 @@ for (var i = 0; i < remaining.length; i++)
             {
                 for (var l = 0; l < courses.courses.length; l++)
                 {
-                    if (deps[j].andCourses[k] == courses.courses[l].code && courses.courses[l].grade.substring(0,1) != 'F' && courses.courses[l].grade.substring(0,1) != 'D')
+                    if (deps[j].andCourses[k] == courses.courses[l].code && (courses.courses[l].grade.substring(0,1) == 'F' || courses.courses[l].grade.substring(0,1) == 'D'))
                     {
                         andCheck = false;
                     }
                 }
             }
             // do credit# check
-            for (var k = 0; k < deps[j].andCourses.length; k++)
-            {
-                for (var l = 0; courses.courses.length; l++)
-                {
-                    if (deps[j].creditsSpecified > credits )
-                    {
-                        credCheck = false;
-                    }
-                }
-            }
+            if (deps[j].creditsSpecified > credits )
+                    credCheck = false;
+
+            // do gpa check for greater than 300 level classes
+            if (parseInt(remaining[i].substr(remaining[i].length-3, remaining[i].length-2)) >= 3 && gpa < 2.25)
+                gpaCheck = false;
+
             // if all checks pass push the remaining course and
-            // calculate its priority weight
-            if (credCheck && andCheck && orCheck)
+            //       calculate its priority weight
+            if (credCheck && andCheck && orCheck && gpaCheck)
             {
                 prioritycheck.push(remaining[i]);
-                priorityweight.push(andCourses.length - orCourses.length);
+                priorityweight.push(andCourses.length - orCourses.length + (deps[j].creditsSpecified / 6));
             }
         }
     }
 }
 console.log(prioritycheck);
 console.log(priorityweight);
+// sort courses based on weight
+// compare against courses being offered
 
 
 
@@ -393,7 +401,8 @@ for (var i = 0; i < fails.length; i++)
 {
     console.log(fails[i]);
 }
-console.log("\nOverall major GPA: " + gpa.toFixed(2));
+console.log("CSIT credits counted toward major: " + credits)
+console.log("\nOverall CSIT GPA: " + gpa.toFixed(2));
 
 
 ///////////////////////////////////////////////////////
