@@ -83,9 +83,9 @@ for (var i = 0; i < courses.courses.length; i++)
             check = true;
     }
     
-    if (!check && courses.courses[i].code.substring(li-6, li-3) == "CSC")
+    if (!check && courses.courses[i].code.substring(li-6, li-3) == "CSC" && (courses.courses[i].grade.substring(0,1)  == 'C' || courses.courses[i].grade.substring(0,1)  == 'B'|| courses.courses[i].grade.substring(0,1) == "A") )
         csElects.push(courses.courses[i].code);
-    else if (!check && courses.courses[i].code.substring(li-6, li-3) == "MAT")
+    else if (!check && courses.courses[i].code.substring(li-6, li-3) == "MAT" && (courses.courses[i].grade.substring(0,1)  == 'C' || courses.courses[i].grade.substring(0,1)  == 'B'|| courses.courses[i].grade.substring(0,1) == "A") )
         matElects.push(courses.courses[i].code);
 }
 csElects = csElects.sort();
@@ -339,14 +339,10 @@ for (var i = 0; i < courses.courses.length; i++)
         }
     }
     var li = courses.courses[i].code.length;
-    if (!check && courses.courses[i].code.substring(li-6, li-3) == "CSC")
-    {
+    if (!check && courses.courses[i].code.substring(li-6, li-3) == "CSC" && (courses.courses[i].grade.substring(0,1)  == 'C' || courses.courses[i].grade.substring(0,1)  == 'B'|| courses.courses[i].grade.substring(0,1) == "A") )
         csElects.push(courses.courses[i].code);
-    }
-    else if (!check && courses.courses[i].code.substring(li-6, li-3) == "MAT")
-    {
+    else if (!check && courses.courses[i].code.substring(li-6, li-3) == "MAT" && (courses.courses[i].grade.substring(0,1)  == 'C' || courses.courses[i].grade.substring(0,1)  == 'B'|| courses.courses[i].grade.substring(0,1) == "A") )
         matElects.push(courses.courses[i].code);
-    }
 }
 
 csElects = csElects.sort();
