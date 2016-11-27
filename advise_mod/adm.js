@@ -149,44 +149,7 @@ for (var i = 0; i < remaining.length; i++)
 }
 */
 
-/*// MAJOR ELECTIVES TAKEN
-var csElects = [];
-var matElects = [];
-
-for (var i = 0; i < courses.courses.length; i++)
-{
-    var check = false;
-    for (var j = 0; j < usd.usd.required.length; j++)
-    {
-        if (courses.courses[i].code == usd.usd.required[j])
-        {
-            check = true;
-        }
-    }
-    var li = courses.courses[i].code.length;
-    if (!check && courses.courses[i].code.substring(li-6, li-3) == "CSC")
-    {
-        csElects.push(courses.courses[i].code);
-    }
-    else if (!check && courses.courses[i].code.substring(li-6, li-3) == "MAT")
-    {
-        matElects.push(courses.courses[i].code);
-    }
-}
-console.log(csElects);
-console.log(matElects);
-*/
-
-// read in test data
-var deps = require('./CSITcatalog.json');  // cs course prereqs
-var stud = require('./student.json');       // student data
-var courses = require('./courses.json');    // courses taken
-var gened = require('./gened_f11.json');    // gen ed requirements
-var usd = require('./usd_s16.json');        // uit courses required
-var offer = require('./offered.json');      // being offered this semester
-
-
-
+/*// MAJOR ELECTIVES TAKEN AND Reqs
 var csElects = [];
 var matElects = [];
 
@@ -211,40 +174,78 @@ for (var i = 0; i < courses.courses.length; i++)
         matElects.push(courses.courses[i].code);
     }
 }
+
+csElects = csElects.sort();
+matEelects = matElects.sort();
 console.log(csElects);
 console.log(matElects);
 
+var csReqs = [];
+var matReqs = [];
 
-/*
-for(var i = 0; i < usd.usd.electives.length; i++)
+for (var i  = 0; i < usd.usd.electives.length; i++)
 {
-   var check = false;
-   console.log(usd.usd.electives[i]);
-   for(var j = 0; j < courses.courses.length; j++) 
-   {
-       var li = usd.usd.electives[i].higherThan.length;
-       var lj = courses.courses[j].code.length;
-         if(parseInt(usd.usd.electives[i].higherThan.substring(li-3, li)) >= parseInt(courses.courses[j].code.substring(lj-3,lj)))
-         {
-           completed.push(usd.usd.required[i]);
-           check = true;
-         }
-   }
-   if (check == false)
-   {
-       remaining.push(usd.usd.required[i]);
-   } 
+    var li = usd.usd.electives[i].higherThan.length;
+    if (usd.usd.electives[i].higherThan.substr(li-6, li-3) == "CSC")
+    {
+        csReqs.push(usd.usd.electives[i].higherThan);
+    }
+    else if (usd.usd.electives[i].higherThan.substr(li-6, li-3) == "MAT")
+    {
+        matReqs.push(usd.usd.electives[i].higherThan)
+    }
 }
-console.log("\n");
-console.log("Completed major requirements: ")
-for (var i = 0; i < completed.length; i++)
+
+console.log(csReqs);
+console.log(matReqs);
+
+var csSatisfied = [];
+var matSatisfied = [];
+
+for (var i = 0; i < csReqs.length; i++)
+    csSatisfied.push("CSC000");
+
+for (var i = 0; i < matReqs.length; i++)
+    matSatisfied.push("MAT000");
+
+for (var i = 0; i < csReqs.length; i++)
 {
-   console.log(completed[i]);
+    for (var j = 0; j < csElects.length; j++)
+    {
+        if (csElects[j] == "CSC000")
+            continue;
+        if (parseInt(csReqs[i].substring(csReqs.length-3, csReqs.length)) < parseInt(csElects[j].substring(csReqs.length-3, csReqs.length)))
+        {
+            csSatisfied[i] = csElects[j];
+
+            csElects[j] = "CSC000";
+            continue;
+        }
+    }
 }
-console.log("\n");
-console.log("Remaining major requirements: ")
-for (var i = 0; i < remaining.length; i++)
+for (var i = 0; i < matReqs.length; i++)
 {
-   console.log(remaining[i]);
+    for (var j = 0; j < matElects.length; j++)
+    {
+        if (matElects[j] == "MAT000")
+            continue;
+        if (parseInt(matReqs[i].substring(matReqs.length-3, matReqs.length)) < parseInt(matElects[j].substring(matReqs.length-3, matReqs.length)))
+        {
+            matSatisfied[i] = matElects[j];
+            matElects[j] = "MAT000";
+            continue;
+        }
+    }
 }
+
+console.log(csSatisfied);
+console.log(matSatisfied);
 */
+
+// read in test data
+var deps = require('./CSITcatalog.json');  // cs course prereqs
+var stud = require('./student.json');       // student data
+var courses = require('./courses.json');    // courses taken
+var gened = require('./gened_f11.json');    // gen ed requirements
+var usd = require('./usd_s16.json');        // uit courses required
+var offer = require('./offered.json');      // being offered this semester
