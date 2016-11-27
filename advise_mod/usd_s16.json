@@ -2,57 +2,48 @@
   {
 		"required": ["MAT181", "MAT260", "PHI040", "CSC125", "CSC135", "CSC136", "CSC225","CSC235", "CSC237", "CSC310", "CSC328", "CSC343", "CSC354", "CSC355"], 
 		"either":
-		{
-			"choice1":  ["MAT140", "MAT310"],	
-			"choice2":  ["ex1", "ex2"]
-		},
+		[
+			[ "MAT140", "MAT310"],	
+			["ex1", "ex2"]
+		],
 		"electives":
-		{
-			"CSCxx1":
+		[
 			{
         		"higherThan": "CSC200",
         		"not": []
    	 		},
-			"CSCxx2":
 			{
         		"higherThan": "CSC200",
         		"not": []
    	 		},
-			"CSCxx3":
 			{
         		"higherThan": "CSC300",
         		"not": [] 
    	 		},
-			"CSCxx4":
 			{
         		"higherThan": "CSC300",
         		"not": [] 
    	 		},
-			"CSCxx5":
 			{
         		"higherThan": "CSC300",
         		"not": [] 
    	 		},
-			"CSCxx6":
 			{
         		"higherThan": "CSC300",
         		"not": [] 
    	 		},
-			"CSCxx7":
 			{
         		"higherThan": "CSC300",
         		"not": [] 
    	 		},
-			"CSCxx8":
 			{
         		"higherThan": "CSC300",
         		"not": [] 
    	 		},
-			"MATxx1":
 			{
         		"higherThan": "MAT181",
       			"not": ["MAT224"] 
    	 		}
-		}
+		]
 	}
 }

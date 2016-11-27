@@ -16,24 +16,16 @@
         "competency": "null"
 	},
     {
-		"code": "CSC130", 
-		"name": "IT Fundamentals", 
+		"code": "MAT181", 
+		"name": "Calculus", 
 		"semester": "fall14",
 		"grade": "B",
-        "credits": 3,
+        "credits": 4,
         "competency": "null"
 	},
     {
 		"code": "CSC135", 
 		"name": "Intro to CS 1", 
-		"semester": "fall14",
-		"grade": "B",
-        "credits": 3,
-        "competency": "null"
-	},
-    {
-		"code": "MAT105", 
-		"name": "College Algebra", 
 		"semester": "fall14",
 		"grade": "B",
         "credits": 3,

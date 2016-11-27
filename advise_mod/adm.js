@@ -39,32 +39,6 @@ What happens if  student gets D in prerequisite, but is already registered for o
 Do grad courses have different grade requirements? No C's etc?
 Should I assume specific semester courses, or base more off of courses offered?
 Should I ask to see new IT major check sheet?
-
-(For IT Maintainence) Elective course requirements:
-*Provide unique code for each elective needed (generated automatically)
-::Example of Required input::
-"Courses":
-{
-    "CSC125", "CSC126", "CSC127",
-    "CSCxx1":
-	{
-        "higherThan": "CSC200",
-        "not": "CSC130, CSC235, CSC225, CSC237, etc."
-    },
-    "CSCxx2":
-	{
-        "higherThan": "CSC300",
-        "not": "CSC310, CSC325", "etc."
-    },
-    "CSC354", "CSC355", "CSC356",
-    "MATxx1":
-	{
-        "higherThan": "MAT181"
-        "not": "MAT224"
-    }
-}
-
-
 */
 
 /* EXTRACT TEXT FROM PDF
@@ -140,46 +114,137 @@ for(var i = 0; i < offer.offered.length; i++)
 */
 
 /*// MAJOR COURSES TAKEN AND REMAINING
+var completed = [];
+var remaining = [];
+
 console.log("Required courses: ");
-for(var i = 0; i < uit.uit[0].required.length; i++)
+for(var i = 0; i < usd.usd.required.length; i++)
 {
    var check = false;
-   console.log(uit.uit[0].required[i]);
+   console.log(usd.usd.required[i]);
    for(var j = 0; j < courses.courses.length; j++) 
    {
-         if(uit.uit[0].required[i] == courses.courses[j].code)
+         if(usd.usd.required[i] == courses.courses[j].code)
          {
-           completed.push(uit.uit[0].required[i]);
+           completed.push(usd.usd.required[i]);
            check = true;
          }
    }
    if (check == false)
    {
-       remaining.push(uit.uit[0].required[i]);
+       remaining.push(usd.usd.required[i]);
    } 
 }
 console.log("\n");
-console.log("Completed courses: ")
+console.log("Completed major requirements: ")
 for (var i = 0; i < completed.length; i++)
 {
    console.log(completed[i]);
 }
 console.log("\n");
-console.log("Remaining courses: ")
+console.log("Remaining major requirements: ")
 for (var i = 0; i < remaining.length; i++)
 {
    console.log(remaining[i]);
 }
 */
 
+/*// MAJOR ELECTIVES TAKEN
+var csElects = [];
+var matElects = [];
+
+for (var i = 0; i < courses.courses.length; i++)
+{
+    var check = false;
+    for (var j = 0; j < usd.usd.required.length; j++)
+    {
+        if (courses.courses[i].code == usd.usd.required[j])
+        {
+            check = true;
+        }
+    }
+    var li = courses.courses[i].code.length;
+    if (!check && courses.courses[i].code.substring(li-6, li-3) == "CSC")
+    {
+        csElects.push(courses.courses[i].code);
+    }
+    else if (!check && courses.courses[i].code.substring(li-6, li-3) == "MAT")
+    {
+        matElects.push(courses.courses[i].code);
+    }
+}
+console.log(csElects);
+console.log(matElects);
+*/
+
 // read in test data
-var deps = require('./dependencies.json');  // cs course prereqs
+var deps = require('./CSITcatalog.json');  // cs course prereqs
 var stud = require('./student.json');       // student data
 var courses = require('./courses.json');    // courses taken
 var gened = require('./gened_f11.json');    // gen ed requirements
-var uit = require('./uit_s16.json');        // uit courses required
+var usd = require('./usd_s16.json');        // uit courses required
 var offer = require('./offered.json');      // being offered this semester
-var completed = [];
-var remaining = [];
 
 
+
+var csElects = [];
+var matElects = [];
+
+for (var i = 0; i < courses.courses.length; i++)
+{
+    var check = false;
+    for (var j = 0; j < usd.usd.required.length; j++)
+    {
+        if (courses.courses[i].code == usd.usd.required[j])
+        {
+            check = true;
+        }
+    }
+    var li = courses.courses[i].code.length;
+    console.log(courses.courses[i].code.substring(li-6, li-3));
+    if (!check && courses.courses[i].code.substring(li-6, li-3) == "CSC")
+    {
+        csElects.push(courses.courses[i].code);
+    }
+    else if (!check && courses.courses[i].code.substring(li-6, li-3) == "MAT")
+    {
+        matElects.push(courses.courses[i].code);
+    }
+}
+console.log(csElects);
+console.log(matElects);
+
+
+/*
+for(var i = 0; i < usd.usd.electives.length; i++)
+{
+   var check = false;
+   console.log(usd.usd.electives[i]);
+   for(var j = 0; j < courses.courses.length; j++) 
+   {
+       var li = usd.usd.electives[i].higherThan.length;
+       var lj = courses.courses[j].code.length;
+         if(parseInt(usd.usd.electives[i].higherThan.substring(li-3, li)) >= parseInt(courses.courses[j].code.substring(lj-3,lj)))
+         {
+           completed.push(usd.usd.required[i]);
+           check = true;
+         }
+   }
+   if (check == false)
+   {
+       remaining.push(usd.usd.required[i]);
+   } 
+}
+console.log("\n");
+console.log("Completed major requirements: ")
+for (var i = 0; i < completed.length; i++)
+{
+   console.log(completed[i]);
+}
+console.log("\n");
+console.log("Remaining major requirements: ")
+for (var i = 0; i < remaining.length; i++)
+{
+   console.log(remaining[i]);
+}
+*/
