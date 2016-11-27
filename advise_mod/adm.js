@@ -464,14 +464,12 @@ for (var i = 0; i < matSatisfied.length; i++)
 
 
 // print results
-console.log("\n");
-console.log("Completed major requirements: ")
+console.log("\nCompleted major requirements: ")
 for (var i = 0; i < completed.length; i++)
 {
    console.log(completed[i]);
 }
-console.log("\n");
-console.log("Completed major electives: ")
+console.log("\nCompleted major electives: ")
 for (var i = 0; i < csDone.length; i++)
 {
    console.log(csDone[i]);
@@ -480,14 +478,12 @@ for (var i = 0; i < matDone.length; i++)
 {
    console.log(matDone[i]);
 }
-console.log("\n");
-console.log("Remaining major requirements: ")
+console.log("\nRemaining major requirements: ")
 for (var i = 0; i < remaining.length; i++)
 {
    console.log(remaining[i]);
 }
-console.log("\n");
-console.log("Remaining major electives: ")
+console.log("\nRemaining major electives: ")
 for (var i = 0; i < csRem.length; i++)
 {
    console.log(csRem[i]);
