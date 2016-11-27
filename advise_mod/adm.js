@@ -284,6 +284,52 @@ var gpa = 0;
     }
 gpa = creditPoints/classes;
 
+// print results
+console.log("\nCompleted major requirements: ")
+for (var i = 0; i < completed.length; i++)
+{
+   console.log(completed[i]);
+}
+console.log("\nCompleted major electives: ")
+for (var i = 0; i < csDone.length; i++)
+{
+   console.log(csDone[i]);
+}
+for (var i = 0; i < matDone.length; i++)
+{
+   console.log(matDone[i]);
+}
+console.log("\nRemaining major requirements: ")
+for (var i = 0; i < remaining.length; i++)
+{
+   console.log(remaining[i]);
+}
+console.log("\nRemaining major electives: ")
+for (var i = 0; i < csRem.length; i++)
+{
+   console.log(csRem[i]);
+}
+for (var i = 0; i < matRem.length; i++)
+{
+   console.log(matRem[i]);
+}
+console.log("\nWarnings:");
+for (var i = 0; i < warnings.length; i++)
+{
+    console.log(warnings[i]);
+}
+console.log("\nFailed Courses:");
+for (var i = 0; i < fails.length; i++)
+{
+    console.log(fails[i]);
+}
+console.log("\nOverall CSIT GPA: " + gpa.toFixed(2));
+console.log("\nCSIT credits able to be counted toward major: " + credits)
+
+
+
+/////// COURSE PRIORITIZATION ALGORITHM ///////////
+
 /*
 All 300 level courses require CS GPA of >=2.25 
 All 400 level courses have prereqs exempt for GRAD students	
@@ -354,55 +400,13 @@ for (var i = 0; i < remaining.length; i++)
         }
     }
 }
+console.log("\n\n");
 console.log(prioritycheck);
 console.log(priorityweight);
 // sort courses based on weight
 // compare against courses being offered
 
 
-
-
-// print results
-console.log("\nCompleted major requirements: ")
-for (var i = 0; i < completed.length; i++)
-{
-   console.log(completed[i]);
-}
-console.log("\nCompleted major electives: ")
-for (var i = 0; i < csDone.length; i++)
-{
-   console.log(csDone[i]);
-}
-for (var i = 0; i < matDone.length; i++)
-{
-   console.log(matDone[i]);
-}
-console.log("\nRemaining major requirements: ")
-for (var i = 0; i < remaining.length; i++)
-{
-   console.log(remaining[i]);
-}
-console.log("\nRemaining major electives: ")
-for (var i = 0; i < csRem.length; i++)
-{
-   console.log(csRem[i]);
-}
-for (var i = 0; i < matRem.length; i++)
-{
-   console.log(matRem[i]);
-}
-console.log("\nWarnings:");
-for (var i = 0; i < warnings.length; i++)
-{
-    console.log(warnings[i]);
-}
-console.log("\nFailed Courses:");
-for (var i = 0; i < fails.length; i++)
-{
-    console.log(fails[i]);
-}
-console.log("CSIT credits counted toward major: " + credits)
-console.log("\nOverall CSIT GPA: " + gpa.toFixed(2));
 
 
 ///////////////////////////////////////////////////////
