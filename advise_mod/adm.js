@@ -221,6 +221,7 @@ for (var i = 0; i < matSatisfied.length; i++)
 
 // calculate cs credits and major gpa
 var classes = 0;
+var credits = 0;
 var creditPoints = 0;
 var gpa = 0;
 
@@ -229,19 +230,40 @@ var gpa = 0;
         if (courses.courses[j].code.substring(courses.courses[j].code.length-6, courses.courses[j].code.length-3) == "CSC" && courses.courses[j].code.substring(courses.courses[j].code.length-3, courses.courses[j].code.length) >= 125)
         {
             if (courses.courses[j].grade == "A")
+            {
                 creditPoints += 4;
+                credits += courses.courses[j].credits;
+            }
             else if (courses.courses[j].grade == "A-")
+            {
                 creditPoints += 3.7;
+                credits += courses.courses[j].credits;
+            }
             else if (courses.courses[j].grade == "B+")
+            {
                 creditPoints += 3.3;
+                credits += courses.courses[j].credits;
+            }
             else if (courses.courses[j].grade == "B")
+            {
                 creditPoints += 3;
+                credits += courses.courses[j].credits;
+            }                      
             else if (courses.courses[j].grade == "B-")
+            {
                 creditPoints += 2.7;
+                credits += courses.courses[j].credits;
+            }            
             else if (courses.courses[j].grade == "C+")
+            {
                 creditPoints += 2.3;
+                credits += courses.courses[j].credits;
+            }
             else if (courses.courses[j].grade == "C")
+            {
                 creditPoints += 2;
+                credits += courses.courses[j].credits;
+            }
             else if (courses.courses[j].grade == "D")
                 creditPoints += 1;
             else if (courses.courses[j].grade == "F")
@@ -254,6 +276,80 @@ var gpa = 0;
     }
 gpa = creditPoints/classes;
 
+/*
+All 300 level courses require CS GPA of >=2.25 
+All 400 level courses have prereqs exempt for GRAD students	
+All major requirement courses require a C or better
+All courses with prereqs satisfied, must have a C in that satisfied prereq
+
+ A. Course Prioritization Filter
+ 1. Major requirements + Concomittant (don't forget SD 200 lvl course rule)
+    a. Courses with the most satisfied prereqs.
+       i. Run satisfied prereq check (1. number of credits needed, 2. courses needed)
+    b. Courses with the most dependencies of major requirements
+    c. Courses with the most dependencies of general CS courses
+    d. Fall/Spring only
+*/
+
+var prioritycheck = [];
+var priorityweight = [];
+// for the remaining courses
+for (var i = 0; i < remaining.length; i++)
+{
+    // compare them to the csit catalog
+    for (var j = 0; j < deps.length; j++)
+    {
+        // if a remaining course is identified in the csit catalog
+        if (remaining[i] == deps[j].code)
+        {
+            var orCheck = false;
+            var andCheck = true;
+            var credCheck = false;
+            // do OR check
+            for (var k = 0; k < deps[j].orCourses.length; k++)
+            {
+                for (var l = 0; l < courses.courses.length; l++)
+                {
+                    if (deps[j].orCourses[k] == courses.courses[l].code && courses.courses[l].grade.substring(0,1) != 'F' && courses.courses[l].grade.substring(0,1) != 'D')
+                    {
+                        orCheck = true;
+                    }
+                }
+            }
+            // do AND check
+            for (var k = 0; k < deps[j].andCourses.length; k++)
+            {
+                for (var l = 0; l < courses.courses.length; l++)
+                {
+                    if (deps[j].andCourses[k] == courses.courses[l].code && courses.courses[l].grade.substring(0,1) != 'F' && courses.courses[l].grade.substring(0,1) != 'D')
+                    {
+                        andCheck = false;
+                    }
+                }
+            }
+            // do credit# check
+            for (var k = 0; k < deps[j].andCourses.length; k++)
+            {
+                for (var l = 0; courses.courses.length; l++)
+                {
+                    if (deps[j].creditsSpecified > credits )
+                    {
+                        credCheck = false;
+                    }
+                }
+            }
+            // if all checks pass push the remaining course and
+            // calculate its priority weight
+            if (credCheck && andCheck && orCheck)
+            {
+                prioritycheck.push(remaining[i]);
+                priorityweight.push(andCourses.length - orCourses.length);
+            }
+        }
+    }
+}
+console.log(prioritycheck);
+console.log(priorityweight);
 
 
 

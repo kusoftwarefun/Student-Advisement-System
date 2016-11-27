@@ -1,4 +1,4 @@
-{"dependencies":[
+[
     {
 		"code": "CSC005", 
 		"semOffered": "fall", 
@@ -59,7 +59,8 @@
 		"code": "CSC125", 
 		"semOffered": "annual", 
 		"orCourses": ["null"],
-		"andCourses": ["MAT105"]
+		"andCourses": ["MAT105"],
+		"creditsSpecified": 0
 	},
 	{
 		"code": "CSC130", 
@@ -106,7 +107,8 @@
 		"code": "CSC237", 
 		"semOffered": "annual", 
 		"orCourses": ["null"],
-		"andCourses": ["CSC125", "CSC136"]
+		"andCourses": ["CSC125", "CSC136"],
+		"creditsSpecified": 0
 	},
 	{
 		"code": "CSC241", 
@@ -416,6 +418,6 @@
 		"andCourses": ["null"],
 		"creditsSpecified": 0
 	}
-]}
+]
 
 
