@@ -353,6 +353,7 @@ for (var i = 0; i < prioritycheck.length; i++)
         for (var k = 0; k < deps[j].andCourses; k++)
         {
             if (prioritycheck[i] == deps[j].andCourses[k])
+            //  add ending 0 to make weight value easy to identify
                 priorityweight[i]*=10;
         }
     }
@@ -364,13 +365,23 @@ for (var i = 0; i < prioritycheck.length; i++)
     var str = priorityweight[i].toString();
     if (str.substring(str.length-1, str.length) == "0")
        {
-           // check courses being offered.
-           // if if in there
-           // then push.
-           // delay.push(prioritycheck[i]);
+           // check courses being offered
+           for (var j = 0; j < offer.offered.length; j++)
+           {
+               var unique = true
+               if (prioritycheck[i] == offer.offered[j].code)
+               {
+                   for (var k = 0; k < delay.length; k++)
+                   {
+                       if (delay[k] == offer.offered[j].code)
+                        unique = false;
+                   }
+                   if (unique)
+                    delay.push(prioritycheck[i]);
+               }
+           }
        }
 }
-
 
 // print results
 console.log("\nCompleted major requirements: ")
@@ -424,8 +435,7 @@ for (var i = 0; i < delay.length; i++)
     console.log(delay[i]);
 }
 
-
-
+//==================================================//
 ///////////////////////////////////////////////////////
 /*////// EXTRACT TEXT FROM PDF
 var fs = require('fs');
@@ -461,9 +471,7 @@ console.log(stud.student[0].major);
 console.log(stud.student[0].checksheet);
 console.log(stud.student[0].credits);
 console.log(stud.student[0].gpa);
-
 console.log(uit.uit[0].required);
-
 for(var i = 0; i < deps.dependencies.length; i++) 
 {
       console.log(deps.dependencies[i].code);
@@ -471,7 +479,6 @@ for(var i = 0; i < deps.dependencies.length; i++)
       console.log(deps.dependencies[i].orCourses);
       console.log(deps.dependencies[i].andCourses);
  }
-  
 for(var i = 0; i < courses.courses.length; i++) 
 {
       console.log(courses.courses[i].code);
@@ -481,7 +488,6 @@ for(var i = 0; i < courses.courses.length; i++)
       console.log(courses.courses[i].credits);
       console.log(courses.courses[i].competency);
  }
-
 for(var i = 0; i < gened.geneds.length; i++) 
 {
       console.log(gened.geneds[i].unicore);
@@ -533,7 +539,6 @@ for(var i = 0; i < usd.usd.required.length; i++)
 }
 */
 
-
 ////////////////////////////////////////////////////////
 /*// MAJOR ELECTIVES TAKEN AND REMAINING
 ///// LOW GRADE WARNING COURSES
@@ -576,7 +581,6 @@ matEelects = matElects.sort();
 console.log(csElects);
 console.log(matElects);
 
-
 // grab the elective requirements from the track sheets
 var csReqs = [];
 var csNots = [];
@@ -601,12 +605,10 @@ for (var i  = 0; i < usd.usd.electives.length; i++)
         matObj.push(usd.usd.electives[i]);
     }
 }
-
 console.log(csReqs);
 console.log(matReqs);
 console.log(csNots);
 console.log(matNots);
-
 
 // figure out passing cases
 var csSatisfied = [];
@@ -665,7 +667,6 @@ for (var i = 0; i < matSatisfied.length; i++)
 }
 console.log(csSatisfied);
 console.log(matSatisfied);
-
 
 // figure out remaining
 var csRem = [];
@@ -731,7 +732,6 @@ gpa = creditPoints/classes;
 
 console.log("\nOverall major GPA: " + gpa.toFixed(2));
 */
-
 
 ////////////////////////////////////////////////////
 /*/////// COURSE PRIORITIZATION ALGORITHM ///////////
@@ -803,6 +803,7 @@ for (var i = 0; i < prioritycheck.length; i++)
         for (var k = 0; k < deps[j].andCourses; k++)
         {
             if (prioritycheck[i] == deps[j].andCourses[k])
+            //  add ending 0 to make weight value easy to identify
                 priorityweight[i]*=10;
         }
     }
@@ -814,21 +815,21 @@ for (var i = 0; i < prioritycheck.length; i++)
     var str = priorityweight[i].toString();
     if (str.substring(str.length-1, str.length) == "0")
        {
-           // check courses being offered.
-           // if if in there
-           // then push.
-           // delay.push(prioritycheck[i]);
+           // check courses being offered
+           for (var j = 0; j < offer.offered.length; j++)
+           {
+               var unique = true
+               if (prioritycheck[i] == offer.offered[j].code)
+               {
+                   for (var k = 0; k < delay.length; k++)
+                   {
+                       if (delay[k] == offer.offered[j].code)
+                        unique = false;
+                   }
+                   if (unique)
+                    delay.push(prioritycheck[i]);
+               }
+           }
        }
-}
-
-console.log("\nCourse priority list w/ corresponding weights:");
-for (var i = 0; i < prioritycheck.length; i++)
-{
-   console.log(i + ": " + prioritycheck[i] + " = " + priorityweight[i] + "\n");
-}
-console.log("\nCourses that must be taken in upcoming semester:");
-for (var i = 0; i < delay.length; i++)
-{
-    console.log(delay[i]);
 }
 */
