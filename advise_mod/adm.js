@@ -284,67 +284,7 @@ var gpa = 0;
     }
 gpa = creditPoints/classes;
 
-// print results
-console.log("\nCompleted major requirements: ")
-for (var i = 0; i < completed.length; i++)
-{
-   console.log(completed[i]);
-}
-console.log("\nCompleted major electives: ")
-for (var i = 0; i < csDone.length; i++)
-{
-   console.log(csDone[i]);
-}
-for (var i = 0; i < matDone.length; i++)
-{
-   console.log(matDone[i]);
-}
-console.log("\nRemaining major requirements: ")
-for (var i = 0; i < remaining.length; i++)
-{
-   console.log(remaining[i]);
-}
-console.log("\nRemaining major electives: ")
-for (var i = 0; i < csRem.length; i++)
-{
-   console.log(csRem[i]);
-}
-for (var i = 0; i < matRem.length; i++)
-{
-   console.log(matRem[i]);
-}
-console.log("\nWarnings:");
-for (var i = 0; i < warnings.length; i++)
-{
-    console.log(warnings[i]);
-}
-console.log("\nFailed Courses:");
-for (var i = 0; i < fails.length; i++)
-{
-    console.log(fails[i]);
-}
-console.log("\nOverall CSIT GPA: " + gpa.toFixed(2));
-console.log("\nCSIT credits able to be counted toward major: " + credits)
-
-
-
 /////// COURSE PRIORITIZATION ALGORITHM ///////////
-
-/*
-All 300 level courses require CS GPA of >=2.25 
-All 400 level courses have prereqs exempt for GRAD students	
-All major requirement courses require a C or better
-All courses with prereqs satisfied, must have a C in that satisfied prereq
-
- A. Course Prioritization Filter
- 1. Major requirements + Concomittant (don't forget SD 200 lvl course rule)
-    a. Courses with the most satisfied prereqs.
-       i. Run satisfied prereq check (1. number of credits needed, 2. courses needed)
-    b. Courses with the most dependencies of major requirements
-    c. Courses with the most dependencies of general CS courses
-    d. Fall/Spring only
-*/
-
 var prioritycheck = [];
 var priorityweight = [];
 // for the remaining courses
@@ -400,17 +340,94 @@ for (var i = 0; i < remaining.length; i++)
         }
     }
 }
-console.log("\n\n");
-console.log(prioritycheck);
-console.log(priorityweight);
-// sort courses based on weight
-// compare against courses being offered
+// count depdencies and add to priority weight
+for (var i = 0; i < prioritycheck.length; i++)
+{
+    for (var j = 0; j < deps.length; j++)
+    {
+        for (var k = 0; k < deps[j].orCourses; k++)
+        {
+            if (prioritycheck[i] == deps[j].orCourses[k])
+                priorityweight[i]*=10;
+        }
+        for (var k = 0; k < deps[j].andCourses; k++)
+        {
+            if (prioritycheck[i] == deps[j].andCourses[k])
+                priorityweight[i]*=10;
+        }
+    }
+}
+// add delay courses
+var delay = [];
+for (var i = 0; i < prioritycheck.length; i++)
+{
+    var str = priorityweight[i].toString();
+    if (str.substring(str.length-1, str.length) == "0")
+       {
+           // check courses being offered.
+           // if if in there
+           // then push.
+           // delay.push(prioritycheck[i]);
+       }
+}
 
+
+// print results
+console.log("\nCompleted major requirements: ")
+for (var i = 0; i < completed.length; i++)
+{
+   console.log(completed[i]);
+}
+console.log("\nCompleted major electives: ")
+for (var i = 0; i < csDone.length; i++)
+{
+   console.log(csDone[i]);
+}
+for (var i = 0; i < matDone.length; i++)
+{
+   console.log(matDone[i]);
+}
+console.log("\nRemaining major requirements: ")
+for (var i = 0; i < remaining.length; i++)
+{
+   console.log(remaining[i]);
+}
+console.log("\nRemaining major electives: ")
+for (var i = 0; i < csRem.length; i++)
+{
+   console.log(csRem[i]);
+}
+for (var i = 0; i < matRem.length; i++)
+{
+   console.log(matRem[i]);
+}
+console.log("\nWarnings:");
+for (var i = 0; i < warnings.length; i++)
+{
+    console.log(warnings[i]);
+}
+console.log("\nFailed Courses:");
+for (var i = 0; i < fails.length; i++)
+{
+    console.log(fails[i]);
+}
+console.log("\nOverall CSIT GPA: " + gpa.toFixed(2));
+console.log("\nCSIT credits able to be counted toward major: " + credits)
+console.log("\nCourse priority list w/ corresponding weights:");
+for (var i = 0; i < prioritycheck.length; i++)
+{
+   console.log(i + ": " + prioritycheck[i] + " = " + priorityweight[i] + "\n");
+}
+console.log("\nCourses that must be taken in upcoming semester:");
+for (var i = 0; i < delay.length; i++)
+{
+    console.log(delay[i]);
+}
 
 
 
 ///////////////////////////////////////////////////////
-/* EXTRACT TEXT FROM PDF
+/*////// EXTRACT TEXT FROM PDF
 var fs = require('fs');
 var extract = require('pdf-text-extract');
 var path = require('path');
@@ -428,7 +445,7 @@ extract(filePath, { splitPages: false}, function (err, text);
 */
 
 ///////////////////////////////////////////////////////
-/*  READ IN JSON (then print)
+/*///////  READ IN JSON (then print)
 var deps = require('./dependencies.json');
 var stud = require('./student.json');
 var courses = require('./courses.json');
@@ -520,7 +537,6 @@ for(var i = 0; i < usd.usd.required.length; i++)
 ////////////////////////////////////////////////////////
 /*// MAJOR ELECTIVES TAKEN AND REMAINING
 ///// LOW GRADE WARNING COURSES
-
 var csElects = [];
 var matElects = [];
 
@@ -678,7 +694,7 @@ console.log(matDone);
 */
 
 ////////////////////////////////////////////////
-/*// CALCULATE CS MAJOR CREDITS AND GPA
+/*//// CALCULATE CS MAJOR CREDITS AND GPA
 var classes = 0;
 var creditPoints = 0;
 var gpa = 0;
@@ -714,4 +730,105 @@ var gpa = 0;
 gpa = creditPoints/classes;
 
 console.log("\nOverall major GPA: " + gpa.toFixed(2));
+*/
+
+
+////////////////////////////////////////////////////
+/*/////// COURSE PRIORITIZATION ALGORITHM ///////////
+var prioritycheck = [];
+var priorityweight = [];
+// for the remaining courses
+for (var i = 0; i < remaining.length; i++)
+{
+    // compare them to the csit catalog
+    for (var j = 0; j < deps.length; j++)
+    {
+        // if a remaining course is identified in the csit catalog
+        if (remaining[i] == deps[j].code)
+        {
+            var orCheck = false;
+            var andCheck = true;
+            var credCheck = false;
+            var gpaCheck = true;
+            // do OR check
+            for (var k = 0; k < deps[j].orCourses.length; k++)
+            {
+                for (var l = 0; l < courses.courses.length; l++)
+                {
+                    if (deps[j].orCourses[k] == courses.courses[l].code && courses.courses[l].grade.substring(0,1) != 'F' && courses.courses[l].grade.substring(0,1) != 'D')
+                    {
+                        orCheck = true;
+                    }
+                }
+            }
+            // do AND check
+            for (var k = 0; k < deps[j].andCourses.length; k++)
+            {
+                for (var l = 0; l < courses.courses.length; l++)
+                {
+                    if (deps[j].andCourses[k] == courses.courses[l].code && (courses.courses[l].grade.substring(0,1) == 'F' || courses.courses[l].grade.substring(0,1) == 'D'))
+                    {
+                        andCheck = false;
+                    }
+                }
+            }
+            // do credit# check
+            if (deps[j].creditsSpecified > credits )
+                    credCheck = false;
+
+            // do gpa check for greater than 300 level classes
+            if (parseInt(remaining[i].substr(remaining[i].length-3, remaining[i].length-2)) >= 3 && gpa < 2.25)
+                gpaCheck = false;
+
+            // if all checks pass push the remaining course and
+            //       calculate its priority weight
+            if (credCheck && andCheck && orCheck && gpaCheck)
+            {
+                prioritycheck.push(remaining[i]);
+                priorityweight.push(andCourses.length - orCourses.length + (deps[j].creditsSpecified / 6));
+            }
+        }
+    }
+}
+// count depdencies and add to priority weight
+for (var i = 0; i < prioritycheck.length; i++)
+{
+    for (var j = 0; j < deps.length; j++)
+    {
+        for (var k = 0; k < deps[j].orCourses; k++)
+        {
+            if (prioritycheck[i] == deps[j].orCourses[k])
+                priorityweight[i]*=10;
+        }
+        for (var k = 0; k < deps[j].andCourses; k++)
+        {
+            if (prioritycheck[i] == deps[j].andCourses[k])
+                priorityweight[i]*=10;
+        }
+    }
+}
+// add delay courses
+var delay = [];
+for (var i = 0; i < prioritycheck.length; i++)
+{
+    var str = priorityweight[i].toString();
+    if (str.substring(str.length-1, str.length) == "0")
+       {
+           // check courses being offered.
+           // if if in there
+           // then push.
+           // delay.push(prioritycheck[i]);
+       }
+}
+
+console.log("\nCourse priority list w/ corresponding weights:");
+for (var i = 0; i < prioritycheck.length; i++)
+{
+   console.log(i + ": " + prioritycheck[i] + " = " + priorityweight[i] + "\n");
+}
+console.log("\nCourses that must be taken in upcoming semester:");
+for (var i = 0; i < delay.length; i++)
+{
+    console.log(delay[i]);
+}
 */
