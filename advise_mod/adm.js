@@ -45,6 +45,7 @@ var courses = require('./courses.json');    // courses taken
 var gened = require('./gened_f11.json');    // gen ed requirements
 var usd = require('./usd_s16.json');        // uit courses required
 var offer = require('./offered.json');      // being offered this semester
+var pdfanalyzer = require('./pdfanalyze');  // analyze raw json output
 
 // figure out major reqs taken and remaining
 // compute warnings
