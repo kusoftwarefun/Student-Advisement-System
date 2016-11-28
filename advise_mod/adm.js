@@ -11,7 +11,6 @@ All courses with prereqs satisfied, must have a C in that satisfied prereq
        i. Run satisfied prereq check (1. number of credits needed, 2. courses needed)
     b. Courses with the most dependencies of major requirements
     c. Courses with the most dependencies of general CS courses
-    d. Fall/Spring only
  2. Major electives
     *5 year: + 2x400 level
  3. Gen Eds
@@ -23,7 +22,6 @@ All courses with prereqs satisfied, must have a C in that satisfied prereq
       1.)it is part of the major requirements
       2.)it has dependencies
       3.)its prereqs have been satisfied
-      *push back 2 semesters for fall spring course.
 
   C. Calculate University and CS GPA
     1. Flag warning if CS GPA below 2.25

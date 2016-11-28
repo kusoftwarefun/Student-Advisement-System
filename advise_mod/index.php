@@ -8,14 +8,14 @@
     <title>Preview images</title>
     <style>
         #gallery .thumbnail{                                                                                                                                              
-            width:150px;
-            height: 150px;
+            width:400px;
+            height: 550px;
             float:left;
             margin:2px;
         }
         #gallery .thumbnail img{                                                                                                                                          
-            width:150px;
-            height: 150px;
+            width:400px;
+            height: 550px;
         }
 
     </style>
