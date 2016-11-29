@@ -329,13 +329,14 @@ console.log("\nCSIT credits able to be counted toward major: " + credits)
 console.log ("\n\nTESTING:\n\n");
 
 
-// ANALYZE GENEDS
+// ANALYZE GENEDS AND UNIVERSITY REQS
 var used = [];
 var gentaken = [];
 var genremain = [];
 var gencreds = 0;
 var comps = [];
 var compdef = [];
+var compcheck = true;
 
 
 for (var gen in gened.geneds)
@@ -346,7 +347,7 @@ for (var gen in gened.geneds)
        {
            for (var k = 0; k < courses.courses.length; k++)
             {
-                if (gened.geneds[gen][uni][i].length < 6 && gened.geneds[gen][uni][i] == courses.courses[k].code.substring(0, 3))
+                if (gened.geneds[gen][uni][i] == courses.courses[k].code.substring(0, 3))
                 {
                     var unused = true;
                     for (var l = 0; l < used.length; l++)
@@ -369,18 +370,19 @@ for (var gen in gened.geneds)
                     }
                 }
             } 
-            // if string, not an array, and we only need to check each req 1
+            // if string, not an array, and we only need to check each req once
             if (i < 1 && typeof gened.geneds[gen][uni] == 'string' ) 
               gentaken.push(gened.geneds[gen][uni])
             else if (i < 1)
               genremain.push(gened.geneds[gen][uni])   
        }
-        if (gen == "competencies")
+        if (gen == "competencies" && compcheck)
         {
-            for(x in compdef)
+            for(x in gened.geneds[gen])
             {
                 compdef.push(x);
             }
+            compcheck = false;
         }
    }
 }
@@ -388,25 +390,23 @@ for (var i = 0; i < comps.length; i++)
 {
     for (var j = 0; j < compdef.length; j++)
     {
-        if (comps[i] == compdef[j])
+        if (comps[i] == compdef[j].substring(0,2)) // ignore ending digit for multiples
         {
             compdef[j] = "x";
             break;
         }
     }
-    gentaken.push(comps[i]);
-}
-for (var i = 0; i < compdef.length; i ++)
-{
-    if (compdef[i] != "x")
-        genremain.push(compdef[i]);
 }
 //console.log(gened.geneds);
-console.log("\nGEN EDS Taken");
+console.log("\nCompetencies Taken:")
+console.log(comps);
+console.log("\nCompetencies Remaining:")
+console.log(compdef);
+console.log("\nGEN EDS Taken:");
 console.log(gentaken);
-console.log("\nGEN EDS Remaining");
+console.log("\nGEN EDS Remaining:");
 console.log(genremain);
-console.log("\n Total GEN ED Credits");
+console.log("\n Total GEN ED Credits:");
 console.log(gencreds);
 
 /////// COURSE PRIORITIZATION ALGORITHM ///////////
