@@ -2,3 +2,5 @@
 // run credit analysis (total credits, minimum semesters remaining, etc.)
 // elective prioritization? if certain number of CS credits?
 // implement grad rules
+// add NOT field to gen ed course structure for explicit NOT course codes
+// refactor json object files

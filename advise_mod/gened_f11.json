@@ -1,25 +1,22 @@
 {
-	"geneds": [
+	"geneds": 
 		{
-			"unicore": [
+			"unicore": 
 				{
 					"oral": [
-						"COM010"
+						"COM"
 					],
 					"written": [
-						"ENG023",
-						"ENG024",
-						"ENG025"
+						"ENG"
 					],
 					"math": [
-						"MAT017"
+						"MAT"
 					],
 					"health": [
 						"HEA"
 					]
-				}
-			],
-			"unidist": [
+				},
+			"unidist": 
 				{
 					"natsci": [
 						"AST",
@@ -72,9 +69,8 @@
 					"elective": [
 						"free"
 					]
-				}
-			],
-			"collegedist": [
+				},
+			"collegedist": 
 				{
 					"scilab": [
 						"AST",
@@ -148,9 +144,8 @@
 					"elective3": [
 						"free"
 					]
-				}
-			],
-			"competencies": [
+				},
+			"competencies": 
 				{
 					"WI1": [],
 					"WI2": [],
@@ -161,6 +156,5 @@
 					"CD": [],
 					"CT": []
 				}
-			]
 		}
-	]}
+	}
