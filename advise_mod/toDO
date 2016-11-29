@@ -4,3 +4,5 @@
 // implement grad rules
 // add NOT field to gen ed course structure for explicit NOT course codes
 // refactor json object files
+// add 'free' and 'lang' cases to gen ed analysis
+// remove double dippers and major reqs

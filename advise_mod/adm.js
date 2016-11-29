@@ -326,7 +326,7 @@ console.log("\nOverall CSIT GPA: " + gpa.toFixed(2));
 console.log("\nCSIT credits able to be counted toward major: " + credits)
 
 
-
+console.log ("\n\nTESTING:\n\n");
 
 
 // ANALYZE GENEDS
@@ -335,6 +335,9 @@ var gentaken = [];
 var genremain = [];
 var gencreds = 0;
 var comps = [];
+var compdef = [];
+
+
 for (var gen in gened.geneds)
 {
    for (var uni in gened.geneds[gen])
@@ -343,7 +346,7 @@ for (var gen in gened.geneds)
        {
            for (var k = 0; k < courses.courses.length; k++)
             {
-                if (gened.geneds[gen][uni][i] == courses.courses[k].code.substring(courses.courses[k].length-6, courses.courses[k].length-3))
+                if (gened.geneds[gen][uni][i].length < 6 && gened.geneds[gen][uni][i] == courses.courses[k].code.substring(0, 3))
                 {
                     var unused = true;
                     for (var l = 0; l < used.length; l++)
@@ -353,30 +356,58 @@ for (var gen in gened.geneds)
                             unused = false;
                         }
                     }
-                    if (unused)
+                    if (unused && gen != "competencies")
                     {
                         gened.geneds[gen][uni] = courses.courses[k].code;
-                        if (courses.courses[k].competency != "null")
+                        for (var m in courses.courses[k].competency)
                         {
-                            gentaken.push(courses.courses[k].competency)
+                            comps.push(courses.courses[k].competency[m]);
+
                         }
                         used.push(courses.courses[k].code);
+                        gencreds += courses.courses[k].credits;
                     }
-                
                 }
             } 
+            // if string, not an array, and we only need to check each req 1
             if (i < 1 && typeof gened.geneds[gen][uni] == 'string' ) 
               gentaken.push(gened.geneds[gen][uni])
             else if (i < 1)
               genremain.push(gened.geneds[gen][uni])   
        }
+        if (gen == "competencies")
+        {
+            for(x in compdef)
+            {
+                compdef.push(x);
+            }
+        }
    }
 }
+for (var i = 0; i < comps.length; i++)
+{
+    for (var j = 0; j < compdef.length; j++)
+    {
+        if (comps[i] == compdef[j])
+        {
+            compdef[j] = "x";
+            break;
+        }
+    }
+    gentaken.push(comps[i]);
+}
+for (var i = 0; i < compdef.length; i ++)
+{
+    if (compdef[i] != "x")
+        genremain.push(compdef[i]);
+}
 //console.log(gened.geneds);
-console.log("\nGEN EDS TAKEN");
+console.log("\nGEN EDS Taken");
 console.log(gentaken);
-console.log("\nGEN EDS REMAINING");
+console.log("\nGEN EDS Remaining");
 console.log(genremain);
+console.log("\n Total GEN ED Credits");
+console.log(gencreds);
 
 /////// COURSE PRIORITIZATION ALGORITHM ///////////
 var prioritycheck = [];

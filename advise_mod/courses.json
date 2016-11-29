@@ -5,7 +5,7 @@
 		"semester": "fall14",
 		"grade": "B",
         "credits": 3,
-        "competency": "VL"
+        "competency": ["VL"]
 	},
     {
 		"code": "ENG023", 
@@ -13,7 +13,7 @@
 		"semester": "fall14",
 		"grade": "B",
         "credits": 3,
-        "competency": "null"
+        "competency": []
 	},
     {
 		"code": "MAT181", 
@@ -21,7 +21,7 @@
 		"semester": "fall14",
 		"grade": "B",
         "credits": 4,
-        "competency": "null"
+        "competency": []
 	},
     {
 		"code": "CSC135", 
@@ -29,7 +29,7 @@
 		"semester": "fall14",
 		"grade": "B",
         "credits": 3,
-        "competency": "null"
+        "competency": []
 	},
     {
 		"code": "CSC125", 
@@ -37,7 +37,7 @@
 		"semester": "spring15",
 		"grade": "F",
         "credits": 3,
-        "competency": "CT"
+        "competency": ["CT"]
 	},
     {
 		"code": "CSC136", 
@@ -45,7 +45,7 @@
 		"semester": "spring15",
 		"grade": "pending",
         "credits": 3,
-        "competency": "CP"
+        "competency": ["CP"]
 	},
     {
         "code": "CSC242",
@@ -53,7 +53,7 @@
         "semester": "spring15",
         "grade": "D",
         "credits": 3,
-        "comptency": "null"
+        "comptency": []
     },
 	{
         "code": "MAT140",
@@ -61,7 +61,7 @@
         "semester": "spring15",
         "grade": "pending",
         "credits": 3,
-        "comptency": "QL"
+        "comptency": ["QL"]
     },
 	{
         "code": "PHI040",
@@ -69,6 +69,6 @@
         "semester": "spring15",
         "grade": "pending",
         "credits": 3,
-        "comptency": "CDCT"
+        "comptency": ["CD","CT"]
     }
 ]}
