@@ -41,7 +41,7 @@ Should I ask to see new IT major check sheet?
 // read in test data
 var deps = require('./CSITcatalog.json');  // cs course prereqs
 var stud = require('./student.json');       // student data
-var courses = require('./courses.json');    // courses taken
+var courses = require('./taken.json');    // courses taken
 var gened = require('./gened_f11.json');    // gen ed requirements
 var usd = require('./usd_s16.json');        // uit courses required
 var offer = require('./offered.json');      // being offered this semester
@@ -326,7 +326,7 @@ console.log("\nOverall CSIT GPA: " + gpa.toFixed(2));
 console.log("\nCSIT credits able to be counted toward major: " + credits)
 
 
-console.log ("\n\nTESTING:\n\n");
+//console.log ("\n\nTESTING:\n\n");
 
 
 // ANALYZE GENEDS AND UNIVERSITY REQS
