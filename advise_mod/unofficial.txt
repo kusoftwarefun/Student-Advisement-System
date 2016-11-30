@@ -1,0 +1,139 @@
+Page 1 of 2
+
+
+
+
+                                 Kutztown University
+                     Unofficial Undergraduate Academic Record
+Name:       Geoffrey Pitman
+Student ID: 002101769
+
+Birthdate:      Dec 5                                                  Transfer Credit from DELAWARE TEC CC STAN
+Print Date:     2016-09-16                                             BIO 106     INTRO TO ZOOLOGY                                               4.00      CR
+                                                                       BIO 104     PRINCIPLES OF BIOLOGY                                          4.00      CR
+                  Beginning of Undergraduate Record                    COM 213     COMM IN MULTCLTRL                                              3.00      CR
+                                                                                   WORLD
+                              Fall 2014                                CSC 10      COMPUTER APPLICATIONS                                          3.00      CR
+Plan:         BS CSC/SOFTWARE DEVEL Major                              ENG 23      COLLEGE COMPOSITION I                                          3.00      CR
+Course         Description                  Attempted   Earned Grade   HUM 881     HUMANITIES ELECTIVE                                            3.00      CR
+CSC 125        DISCRETE MATH FOR COMP            3.00     3.00   A     HUM 880     HUMANITIES ELECTIVE                                            3.00      CR
+     CT        I                                                       MAT 880     MATHEMATICS ELECTIVE                                           3.00      CR
+CSC 136        COMPUTER SCIENCE II               3.00    3.00    A     PHY 40      GENERAL PHYSICS I                                              4.00      CR
+     CP                                                                POL 10      AMERICAN GOVERNMENT                                            3.00      CR
+CSC 241        ADV VISUAL BASIC                  3.00    3.00    A     PSY 250     ABNORMAL PSYCHOLOGY                                            3.00      CR
+     CP        PROGRAM                                                 PSY 125     LIFE SPAN DEVELOPMENT                                          3.00      CR
+MAT 115        PRECALCULUS                       3.00    3.00    A     PSY 11      GENERAL PSYCHOLOGY                                             3.00      CR
+               MATHEMATICS                                             PSY 880     PSYCHOLOGY ELECTIVE                                            3.00      CR
+                                                                       PSY 881     PSYCHOLOGY ELECTIVE                                            3.00      CR
+Transfer Credit from ATLANTIC CAPE CMTY COLL
+                                                                       SOC 10      PRINCIPLES OF SOCIOLOGY                                        3.00      CR
+GEG 101     WORLD REGIONAL                               3.00   CR
+                                                                       SOC 881     SOCIOLOGY ELECTIVE                                             3.00      CR
+            GEOGRAPHY
+                                                                       SOC 880     SOCIOLOGY ELECTIVE                                             3.00      CR
+HIS 25      HIS US:FORM YRS&FED                          3.00   CR
+                                                                       WRI 220     TECHNICAL                                                      3.00      CR
+            REPUB
+                                                                                   WRITING/COMMUN
+PHI 30      INTRO TO PHILOSOPHY                          3.00   CR
+                                                                       Dean's List
+Transfer Credit from Reading Area Community College
+ACC 121     FINANCIAL ACCOUNTING                         3.00   CR                                                  Points Attempted              Earned    GPA
+BIO 130     ENV ISSUES:GLOBAL                            3.00   CR      Term Total                                   48.00            12.00         12.00   4.00
+            PERSPEC                                                     Term Transfer                                                             117.00
+BUS 880     BUSINESS ELECTIVE                            3.00   CR      Cumulative Total                             48.00            12.00 129.00          4.00
+COM 130     INTERPERS COM:AN INTRO                       3.00   CR                 ---------------------------------------------------------------------
+CSC 122     WEB SITE DESIGN                              3.00   CR
+CSC 130     INFO TECH FUNDAMENTALS                       3.00   CR                                   Spring 2015
+CSC 135     COMPUTER SCIENCE I                           3.00   CR     Plan:         BS CSC/INFO TECHNOLOGY Major
+CSC 880     COMPUTER SCIENCE                             3.00   CR     Course         Description                              Attempted        Earned Grade
+            ELECTIVE                                                   CSC 225        DISCRETE MATH FOR COMP                        3.00          3.00   C
+CSC 881     COMPUTER SCIENCE                             3.00   CR                    II
+            ELECTIVE                                                   CSC 237        DATA STRUCTURES                                 3.00         3.00      B+
+CSC 311     COMPUTER NETWORKS                            3.00   CR     CSC 242        WEB PROGRAMMING                                 3.00         3.00      A-
+ECO 11      PRIN OF                                      3.00   CR     CSC 243        JAVA PROGRAMMING                                3.00         3.00      A
+            MACROECONOMICS
+HEA 102     INTRO TO                                     3.00   CR                                                  Points Attempted              Earned    GPA
+            HEALTH/WELLNESS                                             Term Total                                   39.00            12.00         12.00   3.25
+MAT 3       INTERMEDIATE ALGEBRA                         3.00   CR      Term Transfer                                                                0.00
+MAT 17      INTRO MATH                                   3.00   CR      Cumulative Total                             87.00            24.00 141.00          3.63
+MAT 105     COLLEGE ALGEBRA                              3.00   CR                 ---------------------------------------------------------------------
+PHI 40      INTRODUCTION TO ETHICS                       3.00   CR
+                                                                                                      Fall 2015
+                                                                       Plan:         BS CSC/INFO TECHNOLOGY Major
+                                                                       Course         Description                              Attempted        Earned Grade
+                                                                       CSC 235        COMP ORGAN+ASSEMBLY                           3.00          3.00   A
+                                                                                      LANG.
+                                                                       CSC 328        NETWORK PROGRAMMING                             3.00         3.00      A
+                                                                       CSC 343        OPERATING SYSTEMS                               3.00         3.00      A
+                                                                       CSC 445        INTRO TO INTELLIGENT                            0.00         0.00      W
+                                                                                      ROBOTICS
+                                                                                                                     Points Attempted             Earned    GPA
+                                                                        Term Total                                   36.00              9.00         9.00   4.00
+                                                                        Term Transfer                                                                0.00
+                                                                        Cumulative Total                            123.00            33.00 150.00          3.73
+                                                                                   ---------------------------------------------------------------------
+,Page 2 of 2
+
+
+
+
+                                    Kutztown University
+                        Unofficial Undergraduate Academic Record
+Name:       Geoffrey Pitman
+Student ID: 002101769
+
+
+                              Spring 2016
+Plan:         BS CSC/INFO TECHNOLOGY Major
+Course          Description                              Attempted        Earned Grade
+CSC 253         IT SYSTEMS                                    3.00          3.00   A
+CSC 352         UNIX:SYS                                      3.00          3.00   A
+                PROGRAMNG/ADMIN
+CSC 354         SOFTWARE ENGINEERING I                          3.00        3.00       B
+    WI
+CSC 356         INTRO DATA BASE MGM                             3.00        3.00       B
+                SYS
+MAT 140         APL STATISTICAL METH                            3.00        3.00       A
+    QL
+Dean's List
+                                              Points Attempted             Earned     GPA
+ Term Total                                   54.00            15.00         15.00    3.60
+ Term Transfer                                                                0.00
+ Cumulative Total                            177.00            48.00 165.00           3.69
+            ---------------------------------------------------------------------
+
+                             Summer 2016
+Plan:         BS CSC (COMBINED MS) Major
+Summer 1
+Course          Description                              Attempted        Earned Grade
+CSC 464         HUMAN COMPUTER                                3.00          3.00   A
+                INTERACTION
+                                              Points Attempted             Earned     GPA
+ Term Total                                   12.00              3.00         3.00    4.00
+ Term Transfer                                                                0.00
+ Cumulative Total                            189.00            51.00 168.00           3.71
+            ---------------------------------------------------------------------
+
+                               Fall 2016
+Plan:         BS CSC (COMBINED MS) Major
+Course          Description                              Attempted        Earned Grade
+ARC 15          ART, DESIGN & VIS                             3.00          0.00
+     VL         CULTURE
+CSC 341         INTRO TO INFORMATION                            3.00        0.00
+                SECURITY
+CSC 355         SOFTWARE ENGINEERING II                         3.00        0.00
+    WI
+CSC 402         DATA STRUCTURES II                              3.00        0.00
+                                              Points     Attempted          Earned    GPA
+ In Progress                                   0.00          12.00             0.00   0.00
+ Term Transfer                                                                 0.00
+             ---------------------------------------------------------------------
+
+                            Undergraduate Career Totals
+                                        Points Attempted                 Earned       GPA
+ Enrollment Total                      189.00       51.00                 51.00       3.71
+ Transfer Total                                                          117.00
+ Combined Total                               189.00          51.00      168.00       3.71
+
+          End of Unofficial Undergraduate Academic Record
