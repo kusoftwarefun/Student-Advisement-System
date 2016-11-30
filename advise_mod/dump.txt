@@ -1,0 +1,96 @@
+Completed major requirements: 
+MAT181
+CSC135
+
+Completed major electives: 
+CSC242
+
+Remaining major requirements: 
+MAT260
+PHI040
+CSC125
+CSC136
+CSC225
+CSC235
+CSC237
+CSC310
+CSC328
+CSC343
+CSC354
+CSC355
+
+Remaining major electives: 
+{ higherThan: 'CSC200', not: [] }
+{ higherThan: 'CSC300', not: [] }
+{ higherThan: 'CSC300', not: [] }
+{ higherThan: 'CSC300', not: [] }
+{ higherThan: 'CSC300', not: [] }
+{ higherThan: 'CSC300', not: [] }
+{ higherThan: 'CSC300', not: [] }
+{ higherThan: 'MAT181', not: [ 'MAT224' ] }
+
+Warnings:
+{ code: 'CSC242',
+  name: 'Web Programming',
+  semester: 'spring15',
+  grade: 'D',
+  credits: 3,
+  comptency: [] }
+
+Failed Courses:
+{ code: 'CSC125',
+  name: 'Discrete Math 1',
+  semester: 'spring15',
+  grade: 'F',
+  credits: 3,
+  competency: [ 'CT' ] }
+
+Overall CSIT GPA: 1.33
+
+CSIT credits able to be counted toward major: 3
+
+Competencies Taken:
+[ 'VL' ]
+
+Competencies Remaining:
+[ 'WI', 'WI2', 'WI3', 'CP', 'QL', 'x', 'CD', 'CT' ]
+
+GEN EDS Taken:
+[ 'ENG023', 'MAT181', 'ARC015' ]
+
+GEN EDS Remaining:
+[ [ 'COM' ],
+  [ 'HEA' ],
+  [ 'AST', 'BIO', 'CHM', 'ENV', 'GEL', 'MAR', 'NSE', 'PHY', 'GEG' ],
+  [ 'ANT',
+    'CRJ',
+    'ECO',
+    'HIS',
+    'INT',
+    'MCS',
+    'POL',
+    'PSY',
+    'SOC',
+    'SSE',
+    'SWK',
+    'GEG' ],
+  [ 'ENG', 'HUM', 'PAG', 'PHI', 'WRI', 'WGS', 'lang' ],
+  [ 'free' ],
+  [ 'AST', 'BIO', 'CHM', 'ENV', 'GEL', 'MAR', 'PHY', 'GEG' ],
+  [ 'AST', 'BIO', 'CHM', 'CSC', 'ENV', 'GEL', 'MAR', 'NSE', 'PHY', 'GEG' ],
+  [ 'ANT', 'HIS', 'GEG' ],
+  [ 'CRJ', 'PSY', 'SOC', 'SWK' ],
+  [ 'ANT', 'CRJ', 'ECO', 'HIS', 'INT', 'POL', 'PSY', 'SOC', 'SSE', 'SWK' ],
+  [ 'ENG', 'HUM', 'PAG', 'WRI' ],
+  [ 'PHI', 'lang' ],
+  [ 'ENG', 'HUM', 'PAG', 'PHI', 'WRI', 'lang' ],
+  [ 'free' ],
+  [ 'free' ],
+  [ 'free' ] ]
+
+ Total GEN ED Credits:
+16
+
+Course priority list w/ corresponding weights:
+
+Courses that must be taken in upcoming semester:
