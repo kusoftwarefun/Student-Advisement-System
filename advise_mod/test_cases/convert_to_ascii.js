@@ -1,9 +1,9 @@
 // Convert raw pdf data to ascii
-////// EXTRACT TEXT FROM PDF
+////// EXTRACT TEXT FROM raw PDF data
 var fs = require('fs');
 var extract = require('pdf-text-extract');
 var path = require('path');
-var filePath = path.join(__dirname, './pdf.pdf');
+var filePath = path.join(__dirname, './unofficial.pdf');
 extract(filePath, { splitPages: false}, function (err, text)
 {
     if (err) 
@@ -12,5 +12,5 @@ extract(filePath, { splitPages: false}, function (err, text)
         return;
     }
     console.dir(text);
-    fs.writeFile("./noeol.txt", text);
+    fs.writeFile("./unofficial.txt", text);
 });

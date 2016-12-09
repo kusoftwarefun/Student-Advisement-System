@@ -26,8 +26,6 @@ for (var i = 0; i < courses.courses.length; i++)
             csElects.push(courses.courses[i].code);
     else if (!check && courses.courses[i].code.substring(li-6, li-3) == "MAT" && (courses.courses[i].grade.substring(0,1) == 'D' ))      
            matElects.push(courses.courses[i].code);
-
-
 }
 
 csElects = csElects.sort();
