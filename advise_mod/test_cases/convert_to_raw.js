@@ -7,7 +7,8 @@
 
     pdfParser.on("pdfParser_dataError", errData => console.error(errData.parserError) );
     pdfParser.on("pdfParser_dataReady", pdfData => {
-        fs.writeFile("../raw.json", JSON.stringify(pdfData));
+        fs.writeFile("../rawtest.json", JSON.stringify(pdfData));
     });
 
     pdfParser.loadPDF("../unofficial.pdf");
+    

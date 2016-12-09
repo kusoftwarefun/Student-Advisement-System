@@ -1,0 +1,49 @@
+{"usd":
+  {
+		"required": ["MAT181", "MAT260", "PHI040", "CSC125", "CSC135", "CSC136", "CSC225","CSC235", "CSC237", "CSC310", "CSC328", "CSC343", "CSC354", "CSC355"], 
+		"either":
+		[
+			[ "MAT140", "MAT310"],	
+			["ex1", "ex2"]
+		],
+		"electives":
+		[
+			{
+        		"higherThan": "CSC200",
+        		"not": []
+   	 		},
+			{
+        		"higherThan": "CSC200",
+        		"not": []
+   	 		},
+			{
+        		"higherThan": "CSC300",
+        		"not": [] 
+   	 		},
+			{
+        		"higherThan": "CSC300",
+        		"not": [] 
+   	 		},
+			{
+        		"higherThan": "CSC300",
+        		"not": [] 
+   	 		},
+			{
+        		"higherThan": "CSC300",
+        		"not": [] 
+   	 		},
+			{
+        		"higherThan": "CSC300",
+        		"not": [] 
+   	 		},
+			{
+        		"higherThan": "CSC300",
+        		"not": [] 
+   	 		},
+			{
+        		"higherThan": "MAT181",
+      			"not": ["MAT224"] 
+   	 		}
+		]
+	}
+}

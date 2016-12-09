@@ -5,7 +5,6 @@ var gened = require('./gened_f11.json');
 var usd = require('./usd_s16.json');
 var offer = require('./offered.json')
 
-
 console.log(usd.usd[0].required);
 for(var i = 0; i < deps.CSITcatalog.length; i++) 
 {

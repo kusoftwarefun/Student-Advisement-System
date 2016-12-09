@@ -20,4 +20,4 @@ for(var i = 0; i < taken.taken.length; i++)
       console.log(taken.taken[i].grade);
       console.log(taken.taken[i].credits);
       console.log(taken.taken[i].competency);
- }
+}

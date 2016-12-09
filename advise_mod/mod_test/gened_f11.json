@@ -1,0 +1,160 @@
+{
+	"geneds": 
+		{
+			"unicore": 
+				{
+					"oral": [
+						"COM"
+					],
+					"written": [
+						"ENG"
+					],
+					"math": [
+						"MAT"
+					],
+					"health": [
+						"HEA"
+					]
+				},
+			"unidist": 
+				{
+					"natsci": [
+						"AST",
+						"BIO",
+						"CHM",
+						"ENV",
+						"GEL",
+						"MAR",
+						"NSE",
+						"PHY",
+						"GEG"
+					],
+					"socsci": [
+						"ANT",
+						"CRJ",
+						"ECO",
+						"HIS",
+						"INT",
+						"MCS",
+						"POL",
+						"PSY",
+						"SOC",
+						"SSE",
+						"SWK",
+						"GEG"
+					],
+					"humanitites": [
+						"ENG",
+						"HUM",
+						"PAG",
+						"PHI",
+						"WRI",
+						"WGS",
+						"lang"
+					],
+					"arts": [
+						"ARC",
+						"ARH",
+						"ART",
+						"CDE",
+						"CDH",
+						"CFT",
+						"DAN",
+						"FAR",
+						"FAS",
+						"MUP",
+						"MUS",
+						"THE"
+					],
+					"elective": [
+						"free"
+					]
+				},
+			"collegedist": 
+				{
+					"scilab": [
+						"AST",
+						"BIO",
+						"CHM",
+						"ENV",
+						"GEL",
+						"MAR",
+						"PHY",
+						"GEG"
+					],
+					"scielect": [
+						"AST",
+						"BIO",
+						"CHM",
+						"CSC",
+						"ENV",
+						"GEL",
+						"MAR",
+						"NSE",
+						"PHY",
+						"GEG"
+					],
+					"socsci1": [
+						"ANT",
+						"HIS",
+						"GEG"
+					],
+					"socsci2": [
+						"CRJ",
+						"PSY",
+						"SOC",
+						"SWK"
+					],
+					"socsci3": [
+						"ANT",
+						"CRJ",
+						"ECO",
+						"HIS",
+						"INT",
+						"POL",
+						"PSY",
+						"SOC",
+						"SSE",
+						"SWK"
+					],
+					"humanitites1": [
+						"ENG",
+						"HUM",
+						"PAG",
+						"WRI"
+					],
+					"humanitites2": [
+						"PHI",
+						"lang"
+					],
+					"humanitites3": [
+						"ENG",
+						"HUM",
+						"PAG",
+						"PHI",
+						"WRI",
+						"lang"
+					],
+					"elective1": [
+						"free"
+					],
+					"elective2": [
+						"free"
+					],
+					"elective3": [
+						"free"
+					]
+				},
+			"competencies": 
+				{
+					"WI": [],
+					"WI2": [],
+					"WI3": [],
+					"CP": [],
+					"QL": [],
+					"VL": [],
+					"CD": [],
+					"CT": []
+				}
+		}
+	}

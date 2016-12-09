@@ -1,0 +1,423 @@
+[
+    {
+		"code": "CSC005", 
+		"semOffered": "fall", 
+		"orCourses": ["null"],
+		"andCourses": ["null"],
+		"creditsSpecified": 0
+	},
+	{
+		"code": "CSC010", 
+		"semOffered": "spring", 
+		"orCourses": ["null"],
+		"andCourses": ["null"],
+		"creditsSpecified": 0
+	},
+	{
+		"code": "CSC020", 
+		"semOffered": "annual", 
+		"orCourses": ["null"],
+		"andCourses": ["null"],
+		"creditsSpecified": 0
+	},
+	{
+		"code": "CSC111", 
+		"semOffered": "annual", 
+		"orCourses": ["null"],
+		"andCourses": ["null"],
+		"creditsSpecified": 0
+	},
+	{
+		"code": "CSC112", 
+		"semOffered": "null", 
+		"orCourses": ["null"],
+		"andCourses": ["null"],
+		"creditsSpecified": 0
+	},
+	{
+		"code": "CSC120", 
+		"semOffered": "fall", 
+		"orCourses": ["null"],
+		"andCourses": ["null"],
+		"creditsSpecified": 0
+	},
+	{
+		"code": "CSC122", 
+		"semOffered": "annual", 
+		"orCourses": ["null"],
+		"andCourses": ["null"],
+		"creditsSpecified": 0
+	},
+	{
+		"code": "CSC123", 
+		"semOffered": "spring", 
+		"orCourses": ["null"],
+		"andCourses": ["null"],
+		"creditsSpecified": 0
+	},
+	{
+		"code": "CSC125", 
+		"semOffered": "annual", 
+		"orCourses": ["null"],
+		"andCourses": ["MAT105"],
+		"creditsSpecified": 0
+	},
+	{
+		"code": "CSC130", 
+		"semOffered": "annual", 
+		"orCourses": ["null"],
+		"andCourses": ["null"],
+		"creditsSpecified": 0
+	},
+    {
+		"code": "CSC135", 
+		"semOffered": "annual", 
+		"orCourses": ["null"],
+		"andCourses": ["MAT105"],
+		"creditsSpecified": 0
+	},
+	{
+		"code": "CSC136", 
+		"semOffered": "annual", 
+		"orCourses": ["null"],
+		"andCourses": ["CSC135"],
+		"creditsSpecified": 0
+	},
+	{
+		"code": "CSC220", 
+		"semOffered": "spring", 
+		"orCourses": ["CSC120", "CSC136"],
+		"andCourses": ["null"],
+		"creditsSpecified": 0
+	},
+	{
+		"code": "CSC225", 
+		"semOffered": "annual", 
+		"orCourses": ["null"],
+		"andCourses": ["CSC125", "CSC136"]
+	},
+	{
+		"code": "CSC235", 
+		"semOffered": "fall", 
+		"orCourses": ["null"],
+		"andCourses": ["CSC125", "CSC136"],
+		"creditsSpecified": 0
+	},
+	{
+		"code": "CSC237", 
+		"semOffered": "annual", 
+		"orCourses": ["null"],
+		"andCourses": ["CSC125", "CSC136"],
+		"creditsSpecified": 0
+	},
+	{
+		"code": "CSC241", 
+		"semOffered": "null", 
+		"orCourses": ["CSC112", "CSC135"],
+		"andCourses": ["null"],
+		"creditsSpecified": 0
+	},
+	{
+		"code": "CSC242", 
+		"semOffered": "annual", 
+		"orCourses": ["CSC112", "CSC135"],
+		"andCourses": ["null"],
+		"creditsSpecified": 0
+	},
+	{
+		"code": "CSC243", 
+		"semOffered": "annual", 
+		"orCourses": ["null"],
+		"andCourses": ["CSC136"],
+		"creditsSpecified": 0
+	},
+	{
+		"code": "CSC253", 
+		"semOffered": "annual", 
+		"orCourses": ["null"],
+		"andCourses": ["CSC125","CSC136"],
+		"creditsSpecified": 0
+	},
+	{
+		"code": "CSC280", 
+		"semOffered": "null", 
+		"orCourses": ["null"],
+		"andCourses": ["null"],
+		"creditsSpecified": 0
+	},
+	{
+		"code": "CSC310", 
+		"semOffered": "spring", 
+		"orCourses": ["null"],
+		"andCourses": ["CSC237"],
+		"creditsSpecified": 18
+	},
+	{
+		"code": "CSC311", 
+		"semOffered": "fall", 
+		"orCourses": ["CSC237", "CSC253"],
+		"andCourses": ["null"],
+		"creditsSpecified": 18
+	},
+	{
+		"code": "CSC315", 
+		"semOffered": "null", 
+		"orCourses": ["null"],
+		"andCourses": ["null"],
+		"creditsSpecified": 18
+	},
+	{
+		"code": "CSC325", 
+		"semOffered": "spring", 
+		"orCourses": ["null"],
+		"andCourses": ["CSC225", "CSC237"],
+		"creditsSpecified": 18
+	},
+	{
+		"code": "CSC328", 
+		"semOffered": "fall", 
+		"orCourses": ["CSC237", "CSC253"],
+		"andCourses": ["null"],
+		"creditsSpecified": 18
+	},
+	{
+		"code": "CSC330", 
+		"semOffered": "null", 
+		"orCourses": ["CSC237", "CSC253"],
+		"andCourses": ["CSC243"],
+		"creditsSpecified": 18
+	},
+	{
+		"code": "CSC341", 
+		"semOffered": "fall", 
+		"orCourses": ["CSC237", "CSC253"],
+		"andCourses": ["null"],
+		"creditsSpecified": 18
+	},
+	{
+		"code": "CSC342", 
+		"semOffered": "spring", 
+		"orCourses": ["CSC237", "CSC253"],
+		"andCourses": ["CSC242"],
+		"creditsSpecified": 18
+	},
+	{
+		"code": "CSC343", 
+		"semOffered": "spring", 
+		"orCourses": ["CSC237", "CSC253"],
+		"andCourses": ["null"],
+		"creditsSpecified": 18
+	},
+	{
+		"code": "CSC345", 
+		"semOffered": "null", 
+		"orCourses": ["null"],
+		"andCourses": ["null"],
+		"creditsSpecified": 18
+	},
+	{
+		"code": "CSC351", 
+		"semOffered": "spring", 
+		"orCourses": ["null"],
+		"andCourses": ["CSC341"],
+		"creditsSpecified": 18
+	},
+	{
+		"code": "CSC352", 
+		"semOffered": "spring", 
+		"orCourses": ["CSC237", "CSC253"],
+		"andCourses": ["null"],
+		"creditsSpecified": 18
+	},
+	{
+		"code": "CSC354", 
+		"semOffered": "annual", 
+		"orCourses": ["null"],
+		"andCourses": ["null"],
+		"creditsSpecified": 24
+	}, 
+	{
+		"code": "CSC355", 
+		"semOffered": "annual", 
+		"orCourses": ["null"],
+		"andCourses": ["CSC354"],
+		"creditsSpecified": 0
+	},
+	{
+		"code": "CSC356", 
+		"semOffered": "spring", 
+		"orCourses": ["CSC237", "CSC253"],
+		"andCourses": ["null"],
+		"creditsSpecified": 18
+	},
+	{
+		"code": "CSC363", 
+		"semOffered": "spring", 
+		"orCourses": ["null"],
+		"andCourses": ["null"],
+		"creditsSpecified": 24
+	},
+	{
+		"code": "CSC372", 
+		"semOffered": "null", 
+		"orCourses": ["null"],
+		"andCourses": ["null"],
+		"creditsSpecified": 18
+	},
+	{
+		"code": "CSC378", 
+		"semOffered": "null", 
+		"orCourses": ["null"],
+		"andCourses": ["null"],
+		"creditsSpecified": 18
+	},
+	{
+		"code": "CSC380", 
+		"semOffered": "null", 
+		"orCourses": ["null"],
+		"andCourses": ["null"],
+		"creditsSpecified": 18
+	},
+	{
+		"code": "CSC385", 
+		"semOffered": "null", 
+		"orCourses": ["null"],
+		"andCourses": ["null"],
+		"creditsSpecified": 24
+	},
+	{
+		"code": "CSC395", 
+		"semOffered": "null", 
+		"orCourses": ["null"],
+		"andCourses": ["null"],
+		"creditsSpecified": 18
+	},
+	{
+		"code": "CSC398", 
+		"semOffered": "null", 
+		"orCourses": ["null"],
+		"andCourses": ["null"],
+		"creditsSpecified": 18
+	},
+	{
+		"code": "CSC402", 
+		"semOffered": "null", 
+		"orCourses": ["null"],
+		"andCourses": ["CSC237"],
+		"creditsSpecified": 0
+	},
+	{
+		"code": "CSC411", 
+		"semOffered": "spring", 
+		"orCourses": ["null"],
+		"andCourses": ["CSC311"],
+		"creditsSpecified": 0
+	},
+	{
+		"code": "CSC415", 
+		"semOffered": "null", 
+		"orCourses": ["null"],
+		"andCourses": ["CSC225", "CSC237"],
+		"creditsSpecified": 0
+	},
+	{
+		"code": "CSC420", 
+		"semOffered": "null", 
+		"orCourses": ["null"],
+		"andCourses": ["null"],
+		"creditsSpecified": 0
+	},
+	{
+		"code": "CSC420", 
+		"semOffered": "null", 
+		"orCourses": ["null"],
+		"andCourses": ["null"],
+		"creditsSpecified": 0
+	},
+	{
+		"code": "CSC421", 
+		"semOffered": "null", 
+		"orCourses": ["CSC237", "CSC243"],
+		"andCourses": ["null"],
+		"creditsSpecified": 0
+	},
+	{
+		"code": "CSC422", 
+		"semOffered": "null", 
+		"orCourses": ["null"],
+		"andCourses": ["CSC235", "CSC237"],
+		"creditsSpecified": 0
+	},
+	{
+		"code": "CSC423", 
+		"semOffered": "spring", 
+		"orCourses": ["null"],
+		"andCourses": ["CSC320"],
+		"creditsSpecified": 0
+	},
+	{
+		"code": "CSC425", 
+		"semOffered": "null", 
+		"orCourses": ["null"],
+		"andCourses": ["CSC310"],
+		"creditsSpecified": 0
+	},
+	{
+		"code": "CSC441", 
+		"semOffered": "spring", 
+		"orCourses": ["null"],
+		"andCourses": ["CSC341"],
+		"creditsSpecified": 0
+	},
+	{
+		"code": "CSC445", 
+		"semOffered": "null", 
+		"orCourses": ["null"],
+		"andCourses": ["CSC237", "CSC253"],
+		"creditsSpecified": 0
+	},
+	{
+		"code": "CSC447", 
+		"semOffered": "null", 
+		"orCourses": ["null"],
+		"andCourses": ["CSC237", "CSC253"],
+		"creditsSpecified": 0
+	},
+	{
+		"code": "CSC456", 
+		"semOffered": "fall", 
+		"orCourses": ["null"],
+		"andCourses": ["CSC356"],
+		"creditsSpecified": 0
+	},
+	{
+		"code": "CSC464", 
+		"semOffered": "summer", 
+		"orCourses": ["CSC237", "CSC253"],
+		"andCourses": ["null"],
+		"creditsSpecified": 0
+	},
+	{
+		"code": "CSC464", 
+		"semOffered": "summer", 
+		"orCourses": ["CSC237", "CSC253"],
+		"andCourses": ["null"],
+		"creditsSpecified": 0
+	},
+	{
+		"code": "CSC472", 
+		"semOffered": "fall", 
+		"orCourses": ["null"],
+		"andCourses": ["null"],
+		"creditsSpecified": 0
+	},
+	{
+		"code": "CSC480", 
+		"semOffered": "fall", 
+		"orCourses": ["null"],
+		"andCourses": ["null"],
+		"creditsSpecified": 0
+	}
+]
+
+

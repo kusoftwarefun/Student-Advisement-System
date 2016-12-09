@@ -3,7 +3,8 @@
 var fs = require('fs');
 var extract = require('pdf-text-extract');
 var path = require('path');
-var filePath = path.join(__dirname, './unofficial.pdf');
+var filePath = path.join(__dirname, '../unofficial.pdf');
+
 extract(filePath, { splitPages: false}, function (err, text)
 {
     if (err) 
@@ -12,5 +13,6 @@ extract(filePath, { splitPages: false}, function (err, text)
         return;
     }
     console.dir(text);
-    fs.writeFile("./unofficial.txt", text);
+    fs.writeFile("../unofficial_test.txt", text);
 });
+

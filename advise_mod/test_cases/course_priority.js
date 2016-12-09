@@ -1,7 +1,6 @@
 // generate course priority list
 /////// COURSE PRIORITIZATION ALGORITHM ///////////
 
-
 // REQUIRES 'readin_sysdata.js'
 // REQUIRES 'readin_record.js'
 var prioritycheck = [];
