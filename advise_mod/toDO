@@ -1,8 +1,8 @@
 // double check for math course accuracy
-// run credit analysis (total credits, minimum semesters remaining, etc.)
-// elective prioritization? if certain number of CS credits?
 // implement grad rules
 // add NOT field to gen ed course structure for explicit NOT course codes
 // refactor json object files
 // add 'free' and 'lang' cases to gen ed analysis
-// remove double dippers and major reqs
+// remove double dippers and major reqs from gened analys
+// ? run credit analysis (total credits, minimum semesters remaining, etc.)?
+// ? elective prioritization, possibly if certain number of CS credits?
