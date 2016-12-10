@@ -1,0 +1,65 @@
+{"student":[
+    {
+		"sid": "000000000",
+		"firstName": "Geoffrey", 
+		"lastName": "Pitman",
+		"major": "uit",
+		"checksheet": "fall11",
+		"credits": 60, 
+		"gpa": 3.12
+	},
+    {
+		"sid": "000000001",
+		"firstName": "Geoffrey", 
+		"lastName": "Pitman",
+		"major": "usd",
+		"checksheet": "fall15",
+		"credits": 76, 
+		"gpa": 3.44
+	},
+	{
+		"sid": "000000002",
+		"firstName": "Geoffrey", 
+		"lastName": "Pitman",
+		"major": "5sd",
+		"checksheet": "fall11",
+		"credits": 76, 
+		"gpa": 1.55
+	},
+	{
+		"sid": "000000003",
+		"firstName": "Geoffrey", 
+		"lastName": "Pitman",
+		"major": "5it",
+		"checksheet": "fall11",
+		"credits": 76, 
+		"gpa": 2.20
+	},
+	{
+		"sid": "000000004",
+		"firstName": "Geoffrey", 
+		"lastName": "Pitman",
+		"major": "mit",
+		"checksheet": "fall11",
+		"credits": 76, 
+		"gpa": 2.55
+	},
+	{
+		"sid": "000000005",
+		"firstName": "Geoffrey", 
+		"lastName": "Pitman",
+		"major": "msd",
+		"checksheet": "fall11",
+		"credits": 76, 
+		"gpa": 2.90
+	},
+	{
+		"sid": "000000006",
+		"firstName": "Geoffrey", 
+		"lastName": "Pitman",
+		"major": "msd",
+		"checksheet": "fall11",	
+		"credits": 76, 
+		"gpa": 2.90
+	}
+]}

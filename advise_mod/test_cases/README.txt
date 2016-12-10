@@ -8,5 +8,5 @@ pass is if...
         inclusion statement or manually inserting the code.
 
 This is done purposely to help minimize possible locations of faulty code
-when defects occur, as the individual module functions are assembled 
+when defects occur, as the individual unit functions become assembled 
 into a single module.

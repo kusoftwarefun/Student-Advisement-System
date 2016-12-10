@@ -9,10 +9,9 @@ var classes = 0;
 var creditPoints = 0;
 var gpa = 0;
 
-    for (var j = 0; j < courses.courses.length; j++)
-    {
-        if (courses.courses[j].code.substring(courses.courses[j].code.length-6, courses.courses[j].code.length-3) == "CSC" && courses.courses[j].code.substring(courses.courses[j].code.length-3, courses.courses[j].code.length) >= 125)
-        {
+try {
+    for (var j = 0; j < courses.courses.length; j++) {
+        if (courses.courses[j].code.substring(courses.courses[j].code.length - 6, courses.courses[j].code.length - 3) == "CSC" && courses.courses[j].code.substring(courses.courses[j].code.length - 3, courses.courses[j].code.length) >= 125) {
             if (courses.courses[j].grade == "A")
                 creditPoints += 4;
             else if (courses.courses[j].grade == "A-")
@@ -37,6 +36,10 @@ var gpa = 0;
             classes++;
         }
     }
-gpa = creditPoints/classes;
+    gpa = creditPoints / classes;
 
-console.log("\nOverall major GPA: " + gpa.toFixed(2));
+    console.log("\nOverall major GPA: " + gpa.toFixed(2));
+}
+catch (err) {
+    throw err;
+}
