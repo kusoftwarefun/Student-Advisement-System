@@ -1,0 +1,47 @@
+{"schedule":[
+  {
+  "code": "CSC 253",
+  "section": "010",
+  "name": "IT Systems",
+  "start": "3:00pm",
+  "end": "4:20pm",
+  "days": "TH",
+  "credits": "3"
+  },
+  {
+  "code": "WRI 207",
+  "section": "010",
+  "name": "Writing for Workplace",
+  "start": "1:00pm",
+  "end": "1:50pm",
+  "days": "Mo We Fri",
+  "credits": "3"
+  },
+  {
+  "code": "CSC 243",
+  "setion": "010",
+  "name": "Java Programming",
+  "start": "8:00am",
+  "end": "9:20am",
+  "days": "TU TH",
+  "credits": "3"
+  },
+  {
+  "code": "CSC 220",
+  "section": "010",
+  "name": "Obj-Oriented Media Programming",
+  "start": "12:00pm",
+  "end": "1:20pm",
+  "days": "TU TH",
+  "credits": "3"
+  },
+  {
+  "code": "CSC 10",
+ "section": "010",
+  "name": "Elements of Phys Geg",
+  "start": "10:00am",
+  "end": "10:50am",
+  "days": "MO WE Fr",
+  "credits": "3"
+  },
+]}
