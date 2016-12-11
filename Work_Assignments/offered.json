@@ -1,0 +1,303 @@
+{"offered":[
+  {
+    "code": "CSC010",
+    "section": "010",
+    "days": "TH",
+    "start": "9:30am",
+    "end": "10:50am"
+  },
+  {
+    "code": "CSC020",
+    "section": "010",
+    "days": "MW",
+    "start": "1:00pm",
+    "end": "2:20pm"
+  },
+  {
+    "code": "CSC020",
+    "section": "020",
+    "days": "MW",
+    "start": "2:30pm",
+    "end": "3:50pm"
+  },
+  {
+    "code": "CSC111",
+    "section": "010",
+    "days": "TH",
+    "start": "12:00pm",
+    "end": "1:20pm"
+  },
+  {
+    "code": "CSC111",
+    "section": "010",
+    "days": "TH",
+    "start": "1:30pm",
+    "end": "2:50pm"
+  },
+  {
+    "code": "CSC122",
+    "section": "010",
+    "days": "MWF",
+    "start": "9:00am",
+    "end": "9:50am"
+  },
+  {
+    "code": "CSC123",
+    "section": "010",
+    "days": "MW",
+    "start": "3:00pm",
+    "end": "4:20pm"
+  },
+  {
+    "code": "CSC125",
+    "section": "010",
+    "days": "MWF",
+    "start": "12:00pm",
+    "end": "12:50pm"
+  },
+  {
+    "code": "CSC125",
+    "section": "020",
+    "days": "MWF",
+    "start": "1:00pm",
+    "end": "1:50pm"
+  },
+  {
+    "code": "CSC125",
+    "section": "030",
+    "days": "MWF",
+    "start": "2:00pm",
+    "end": "2:50pm"
+  },
+  {
+    "code": "CSC125",
+    "section": "040",
+    "days": "MWF",
+    "start": "8:00am",
+    "end": "8:50am"
+  },
+  {
+    "code": "CSC130",
+    "section": "010",
+    "days": "MWF",
+    "start": "10:00am",
+    "end": "10:50am"
+  },
+  {
+    "code": "CSC130",
+    "section": "020",
+    "days": "MWF",
+    "start": "11:00am",
+    "end": "11:50am"
+  },
+  {
+    "code": "CSC135",
+    "section": "010",
+    "days": "TH",
+    "start": "3:00pm",
+    "end": "4:20pm"
+  },
+  {
+    "code": "CSC135",
+    "section": "020",
+    "days": "TH",
+    "start": "4:30pm",
+    "end": "5:50pm"
+  },
+  {
+    "code": "CSC135",
+    "section": "030",
+    "days": "TH",
+    "start": "8:00am",
+    "end": "9:20am"
+  },
+  {
+    "code": "CSC136",
+    "section": "010",
+    "days": "MWF",
+    "start": "11:00am",
+    "end": "11:50am"
+  },
+  {
+    "code": "CSC136",
+    "section": "020",
+    "days": "TH",
+    "start": "1:30pm",
+    "end": "2:50pm"
+  },
+  {
+    "code": "CSC136",
+    "section": "030",
+    "days": "TH",
+    "start": "3:00pm",
+    "end": "4:20pm"
+  },
+  {
+    "code": "CSC136",
+    "section": "040",
+    "days": "MWF",
+    "start": "12:00pm",
+    "end": "12:50pm"
+  },
+  {
+    "code": "CSC220",
+    "section": "010",
+    "days": "TH",
+    "start": "12:00pm",
+    "end": "1:20pm"
+  },
+  {
+    "code": "CSC220",
+    "section": "020",
+    "days": "W",
+    "start": "6:00pm",
+    "end": "8:50pm"
+  },
+  {
+    "code": "CSC225",
+    "section": "010",
+    "days": "MWF",
+    "start": "10:00am",
+    "end": "10:50am"
+  },
+  {
+    "code": "CSC237",
+    "section": "010",
+    "days": "M",
+    "start": "6:00pm",
+    "end": "8:50pm"
+  },
+  {
+    "code": "CSC242",
+    "section": "010",
+    "days": "MW",
+    "start": "3:00pm",
+    "end": "4:20pm"
+  },
+  {
+    "code": "CSC242",
+    "section": "020",
+    "days": "MW",
+    "start": "4:30pm",
+    "end": "5:50pm"
+  },
+  {
+    "code": "CSC243",
+    "section": "010",
+    "days": "TH",
+    "start": "8:00am",
+    "end": "9:20am"
+  },
+  {
+    "code": "CSC243",
+    "section": "020",
+    "days": "TH",
+    "start": "9:30am",
+    "end": "10:50am"
+  },
+  {
+    "code": "CSC253",
+    "section": "010",
+    "days": "TH",
+    "start": "3:00pm",
+    "end": "4:20pm"
+  },
+  {
+    "code": "CSC310",
+    "section": "010",
+    "days": "TH",
+    "start": "12:00pm",
+    "end": "1:20pm"
+  },
+  {
+    "code": "CSC325",
+    "section": "010",
+    "days": "TH",
+    "start": "9:30am",
+    "end": "10:50am"
+  },
+  {
+    "code": "CSC342",
+    "section": "010",
+    "days": "MWF",
+    "start": "8:00am",
+    "end": "8:50am"
+  },
+  {
+    "code": "CSC351",
+    "section": "010",
+    "days": "MWF",
+    "start": "9:00am",
+    "end": "9:50am"
+  },
+  {
+    "code": "CSC352",
+    "section": "010",
+    "days": "MW",
+    "start": "11:30am",
+    "end": "12:50pm"
+  },
+  {
+    "code": "CSC354",
+    "section": "010",
+    "days": "MW",
+    "start": "10:00am",
+    "end": "11:20am"
+  },
+  {
+    "code": "CSC355",
+    "section": "010",
+    "days": "TH",
+    "start": "1:30pm",
+    "end": "2:50pm"
+  },
+  {
+    "code": "CSC355",
+    "section": "020",
+    "days": "TH",
+    "start": "1:30pm",
+    "end": "2:50pm"
+  },
+  {
+    "code": "CSC356",
+    "section": "010",
+    "days": "MWF",
+    "start": "1:00pm",
+    "end": "1:50pm"
+  },
+  {
+    "code": "CSC356",
+    "section": "020",
+    "days": "MWF",
+    "start": "2:00pm",
+    "end": "2:50pm"
+  },
+  {
+    "code": "CSC363",
+    "section": "010",
+    "days": "F",
+    "start": "10:00am",
+    "end": "12:50pm"
+  },
+  {
+    "code": "CSC411",
+    "section": "010",
+    "days": "TH",
+    "start": "8:00am",
+    "end": "9:20am"
+  },
+  {
+    "code": "CSC423",
+    "section": "010",
+    "days": "TH",
+    "start": "4:30pm",
+    "end": "5:50pm"
+  },
+  {
+    "code": "CSC443",
+    "section": "010",
+    "days": "MW",
+    "start": "4:30pm",
+    "end": "5:50pm"
+  }
+]}

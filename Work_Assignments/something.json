@@ -1,0 +1,36 @@
+
+{"courses":[
+    {
+		"code": "ARC015", 
+		"name": "Art Appreciation", 
+		"semester": "fall14",
+		"grade": "B",
+        "credits": 3,
+        "competency": "VL"
+	},
+    {
+		"code": "ENG023", 
+		"name": "College Comp 1", 
+		"semester": "fall14",
+		"grade": "B",
+        "credits": 3,
+        "competency": "null"
+	},
+    {
+		"code": "CSC130", 
+		"name": "IT Fundamentals", 
+		"semester": "fall14",
+		"grade": "B",
+        "credits": 3,
+        "competency": "null"
+	},
+    {
+		"code": "CSC135", 
+		"name": "Intro to CS 1", 
+		"semester": "fall14",
+		"grade": "B",
+        "credits": 3,
+        "competency": "null"
+	}
+]}
+

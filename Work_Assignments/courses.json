@@ -1,0 +1,82 @@
+{"courses":[
+    {
+		"code": "ARC015", 
+		"name": "Art Appreciation", 
+		"semester": "fall14",
+		"grade": "B",
+        "credits": 3,
+        "competency": "VL"
+	},
+    {
+		"code": "ENG023", 
+		"name": "College Comp 1", 
+		"semester": "fall14",
+		"grade": "B",
+        "credits": 3,
+        "competency": "null"
+	},
+    {
+		"code": "CSC130", 
+		"name": "IT Fundamentals", 
+		"semester": "fall14",
+		"grade": "B",
+        "credits": 3,
+        "competency": "null"
+	},
+    {
+		"code": "CSC135", 
+		"name": "Intro to CS 1", 
+		"semester": "fall14",
+		"grade": "B",
+        "credits": 3,
+        "competency": "null"
+	},
+    {
+		"code": "MAT105", 
+		"name": "College Algebra", 
+		"semester": "fall14",
+		"grade": "B",
+        "credits": 3,
+        "competency": "null"
+	},
+    {
+		"code": "CSC125", 
+		"name": "Discrete Math 1", 
+		"semester": "spring15",
+		"grade": "pending",
+        "credits": 3,
+        "competency": "CT"
+	},
+    {
+		"code": "CSC136", 
+		"name": "Intro to CS 2", 
+		"semester": "spring15",
+		"grade": "pending",
+        "credits": 3,
+        "competency": "CP"
+	},
+    {
+        "code": "CSC242",
+        "name": "Web Programming",
+        "semester": "spring15",
+        "grade": "pending",
+        "credits": 3,
+        "comptency": "null"
+    },
+	{
+        "code": "MAT140",
+        "name": "Applied Stat Methods",
+        "semester": "spring15",
+        "grade": "pending",
+        "credits": 3,
+        "comptency": "QL"
+    },
+	{
+        "code": "PHI040",
+        "name": "Intro to Ethics",
+        "semester": "spring15",
+        "grade": "pending",
+        "credits": 3,
+        "comptency": "CDCT"
+    }
+]}
